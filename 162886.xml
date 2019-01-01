@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<BGGID>162886</BGGID>
+	<Name>Spirit Island</Name>
+	<Strings>
+		<Players_Capitalise>Spirits</Players_Capitalise>
+		<Players_Lower>spirits</Players_Lower>
+	</Strings>
+	<Base>
+		<Players>
+			<MinPlayers>2</MinPlayers>
+			<MaxPlayers>4</MaxPlayers>
+			<Default>3</Default>
+		</Players>
+	</Base>
+</Game>

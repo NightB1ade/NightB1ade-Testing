@@ -1,1 +1,113 @@
+<!doctype html>
+<html lang="en-GB">
 
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+
+	<script
+		src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+		integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+		crossorigin="anonymous"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<title>NightB1ade’s Board Game Helper</title>
+</head>
+
+
+<body>
+<section id="title">
+	<h1>NightB1ade’s Board Game Helper</h1>
+</section>
+
+
+<section id="content">
+<h1>Games List</h1>
+
+<div id="GamesList">
+</div>
+
+
+
+
+<script>
+var MinDivWidth = 1;
+var MinDivOuterWidth = 1;
+
+
+
+
+function GamesListWidthResize() {
+	var SectionWidth = $("#GamesList").width();
+	var DivWidth;
+
+	DivWidth = SectionWidth / parseInt(SectionWidth / MinDivOuterWidth);
+	$("#GamesList div").outerWidth(DivWidth);
+}
+
+
+
+
+
+$(document).ready(function(){
+	var BGGIDList = "";
+	var html = "";
+
+	$.get(
+		"GamesList.xml" //REMOVE HARD CODING
+		,function(data){
+			BGGIDList = $(data).find("Games Game").map(function(){
+				return $(this).attr("id");
+			})
+			.get()
+			.join();
+		}
+	)
+	.done(function(){
+		$.get(
+			"https://www.boardgamegeek.com/xmlapi2/thing?id=" + BGGIDList //REMOVE HARD CODING
+			,function(data){
+				var item = $(data).find("items item");
+
+				item.sort(function(a,b){
+					return ($(a).find("name[type='primary']").attr("value") > $(b).find("name[type='primary']").attr("value")) ? 1 : 0;
+				});
+
+				item.each(function(i,v){
+					html +=	"<div>"
+						+		"<a href='Game.html?bggid=" + $(v).attr("id") + "'>"
+						+		"<span class='thumbnail'><img src='" + $(v).find("thumbnail").text() + "'></span>"
+						+		"<span>" + $(v).find("name[type='primary']").attr("value") + "</span>"
+						+		"</a>"
+						+	"</div>";
+				});
+			}
+		)
+		.done(function(){
+			$("#GamesList").html(html);
+
+			MinDivWidth = $("#GamesList div").width();
+			MinDivOuterWidth = $("#GamesList div").outerWidth(true);
+			GamesListWidthResize();
+			$(window).resize(function(){
+				GamesListWidthResize();
+			});
+		});
+	});
+});
+</script>
+
+</section>
+
+</body>
+
+</html>

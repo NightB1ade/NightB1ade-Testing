@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css">
+
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+
+	<script
+		src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+		integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+		crossorigin="anonymous"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<title>Game - NightB1ade’s Board Game Helper</title>
+</head>
+
+
+<body>
+<section id="title">
+	<h1>Game</h1>
+	<p>NightB1ade’s Board Game Helper</p>
+</section>
+
+
+<section id="game">
+<span>
+	<img id="thumbnail">
+	<table id="Parameters">
+		<tr name="NoPlayers" class="hidden">
+			<td class="label">No.</td>
+			<td><input class="spinner" name="NoPlayers"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button>Setup</button>
+				<button onclick="DisplayEndGame()">End Game</Button>
+			</td>
+		</tr>
+	</table>
+</span>
+
+<div id="GameInfo">
+</div>
+
+
+
+
+<script>
+var gamedata;
+var url = new URL(window.location.href);
+var BGGID = url.searchParams.get("bggid");
+
+
+
+
+function myStringInterpolation(tpl,args) {
+	var keys = Object.keys(args)
+	,fn = new Function(...keys,'return `' + tpl.replace(/`/g, '\\`') + '`');
+	return fn(...keys.map(x => args[x]));
+};
+
+
+
+
+function DisplayEndGame() {
+	var endgamedata = $(gamedata).find("Base EndGame");
+	var html = "";
+	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
+
+	if (
+		$("#Parameters tr[name='NoPlayers']").css("visibility") == "visible"
+		&& NoPlayers == null
+	) {
+		alert("Please set number of " + $(gamedata).find("Strings Players_Lower").text());
+		return
+	}
+
+	html += "<h1>End Game"
+	+ ((NoPlayers != null) ? " - " + NoPlayers + " " + $(gamedata).find("Strings Players_Capitalise").text(): "")
+	+ "</h1>";
+
+	// End Game Triggers
+	if ($(endgamedata).find("Trigger Item Text").first().text() != "") {
+		var item = $(endgamedata).find("Trigger Item");
+		html += "<h2>Trigger</h2><ul>";
+		$(item).each(function(){
+			var subs = {
+				Players: $(this).find("Players[number='" + NoPlayers + "']").text()
+			};
+			html += "<li>" + myStringInterpolation($(this).find("Text").text(),subs) + "</li>";
+		});
+		html += "</ul>";
+	}
+
+	// End Game Scoring
+	if ($(endgamedata).find("Scoring Item Text").text() != "") {
+		var text = $(endgamedata).find("Scoring Text Item");
+		html += "<h2>Scoring</h2><ul>";
+		$(endgamedata).find("Scoring Item Text").each(function(){
+			html += "<li>" + $(this).text() + "</li>";
+		});
+		html += "</ul>";
+	}
+
+	$("#GameInfo").html(html);
+}
+
+
+
+
+$(document).ready(function(){
+	//Get BGGAPI Data
+	$.get(
+		"https://www.boardgamegeek.com/xmlapi2/thing?id=" + BGGID // REMOVE HARD CODING
+		,function(data){
+			var item = $(data).find("items item");
+
+			var name = $(item).find("name[type='primary']").attr("value");
+			$("head title").html(name + " - NightB1ade’s Board Game Helper");
+			$("section#title h1").html(name);
+
+			var img = $(item).find("thumbnail").text();
+			$("img#thumbnail").attr("src",img);
+		}
+	);
+
+	// Get Internal Data
+	$.get(
+		BGGID + ".xml" //REMOVE HARD CODING
+		,function(data){
+			gamedata = $(data).find("Game");
+
+			// Unhide player number chooser if appropriate
+			var MinPlayers = $(gamedata).find("Base Players MinPlayers").text();
+			var MaxPlayers = $(gamedata).find("Base Players MaxPlayers").text();
+			var DefaultPlayers = $(gamedata).find("Base Players Default").text();
+			var TextPlayers = $(gamedata).find("Strings Players_Capitalise").text();
+
+			if (MinPlayers != MaxPlayers) {
+				$("#Parameters tr[name='NoPlayers'] .label").html("No. " + TextPlayers);
+				$("input[name='NoPlayers']").spinner({
+					min: MinPlayers
+					,max: MaxPlayers
+				});
+				$("input[name='NoPlayers']").spinner("value",DefaultPlayers);
+				$("#Parameters tr[name='NoPlayers']").css("visibility","visible");
+			}
+		}
+	);
+
+	$("button").button();
+	$(".spinner").spinner();
+});
+</script>
+
+</section>
+
+</body>
+
+</html>
