@@ -37,7 +37,6 @@ body {
 
 table {
 	border-collapse: collapse;
-	display: inline-block;
 }
 
 th {
@@ -64,16 +63,16 @@ td {
 /*------------------------------------------------------------------------------------------------*/
 
 input.spinner {
-	width: 100px;
+	width: 50px;
 }
 
 /*------------------------------------------------------------------------------------------------*/
 
 section#game {
 } /* REMOVE HARD CODING */
-	img#thumbnail {
-		max-height: 150px;
-		max-width: 150px;
+	section#game img#thumbnail {
+		max-height: 100px;
+		max-width: 100px;
 	}
 /* } */ /* REMOVE HARD CODING */
 
@@ -84,7 +83,7 @@ section#title {
 	outline: none;
 	padding: 0 0 5px;
 } /* REMOVE HARD CODING */
-	section#title h1 { /* REMOVE HARD CODING */
+	section#title h1 {
 		font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-weight: normal;
 		font-size: 40px;
@@ -92,7 +91,7 @@ section#title {
 		line-height: 36px;
 	}
 
-	section#title p { /* REMOVE HARD CODING */
+	section#title p {
 		color: #d7cfbe;
 		font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-weight: normal;
@@ -103,23 +102,29 @@ section#title {
 
 /*------------------------------------------------------------------------------------------------*/
 
+table#Parameters {
+	display: inline-block;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+
 #GamesList div {
 	border-bottom: 1px solid #434343;
 	display: inline-block;
-	height: 100px;
+	height: 50px;
 	padding: 5px 10px;
-	width: 340px;
+	width: 250px;
 	vertical-align: middle;
 } /* REMOVE HARD CODING */
-	#GamesList span.thumbnail {
-		height: 100px;
+	#GamesList div span.thumbnail {
+		height: 50px;
 		margin: 0 10px 0 0;
-		width: 100px;
+		width: 50px;
 } /* REMOVE HARD CODING */
-		#GamesList span.thumbnail img {
+		#GamesList div span.thumbnail img {
 			align: left;
-			max-height: 100px;
-			max-width: 100px;
+			max-height: 50px;
+			max-width: 50px;
 			vertical-align: middle;
 		}
 	/* } */ /* REMOVE HARD CODING */
