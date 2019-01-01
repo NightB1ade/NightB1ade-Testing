@@ -12,6 +12,10 @@
 			<MaxPlayers>4</MaxPlayers>
 			<Default>3</Default>
 		</Players>
+		<Setup>
+			<Item><Text>Text1</Text></Item>
+			<Item><Text>Text2</Text></Item>
+		</Setup>
 		<EndGame>
 			<Trigger>
 				<Item>

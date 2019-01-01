@@ -42,8 +42,8 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<button>Setup</button>
-				<button onclick="DisplayEndGame()">End Game</Button>
+				<button onclick="Display('Setup')">Setup</button>
+				<button onclick="Display('EndGame')">End Game</Button>
 			</td>
 		</tr>
 	</table>
@@ -72,11 +72,22 @@ function myStringInterpolation(tpl,args) {
 
 
 
-function DisplayEndGame() {
-	var endgamedata = $(gamedata).find("Base EndGame");
+function Display(display) {
+	var displaygamedata;
 	var html = "";
 	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
 
+	// Get relevant data
+	switch(display) {
+		case "EndGame":
+			displaygamedata = $(gamedata).find("Base EndGame");
+			break
+		case "Setup":
+			displaygamedata = $(gamedata).find("Base Setup");
+			break
+	}
+
+	// Alert and return if No. Players is NULL
 	if (
 		$("#Parameters tr[name='NoPlayers']").css("visibility") == "visible"
 		&& NoPlayers == null
@@ -85,33 +96,65 @@ function DisplayEndGame() {
 		return
 	}
 
-	html += "<h1>End Game"
-	+ ((NoPlayers != null) ? " - " + NoPlayers + " " + $(gamedata).find("Strings Players_Capitalise").text(): "")
+	html += "<h1>"
+
+	switch(display) {
+		case "EndGame":
+			html += "End Game";
+			break
+		case "Setup":
+			html += "Setup";
+			break
+	}
+
+	html += ((NoPlayers != null) ? " - " + NoPlayers + " " + $(gamedata).find("Strings Players_Capitalise").text(): "")
 	+ "</h1>";
 
-	// End Game Triggers
-	if ($(endgamedata).find("Trigger Item Text").first().text() != "") {
-		var item = $(endgamedata).find("Trigger Item");
-		html += "<h2>Trigger</h2><ul>";
-		$(item).each(function(){
-			var subs = {
-				Players: $(this).find("Players[number='" + NoPlayers + "']").text()
-			};
-			html += "<li>" + myStringInterpolation($(this).find("Text").text(),subs) + "</li>";
-		});
-		html += "</ul>";
+	switch(display) {
+		case "EndGame":
+			// End Game Triggers
+			if ($(displaygamedata).find("Trigger Item Text").first().text() != "") {
+				var item = $(displaygamedata).find("Trigger Item");
+				html += "<h2>Trigger</h2><ul>";
+				$(item).each(function(){
+					var subs = {
+						Players: $(this).find("Players[number='" + NoPlayers + "']").text()
+					};
+					html += "<li>" + myStringInterpolation($(this).find("Text").text(),subs) + "</li>";
+				});
+				html += "</ul>";
+			}
+
+			// End Game Scoring
+			if ($(displaygamedata).find("Scoring Item Text").text() != "") {
+				var item = $(displaygamedata).find("Scoring Item");
+				html += "<h2>Scoring</h2><ul>";
+				$(item).each(function(){
+					var subs = {
+						Players: $(this).find("Players[number='" + NoPlayers + "']").text()
+					};
+					html += "<li>" + myStringInterpolation($(this).find("Text").text(),subs) + "</li>";
+				});
+				html += "</ul>";
+			}
+
+			break
+
+		case "Setup":
+			// Setup
+			var item = $(displaygamedata).find("Item");
+			html += "<ul>";
+			$(item).each(function(){
+				var subs = {
+					Players: $(this).find("Players[number='" + NoPlayers + "']").text()
+				};
+				html += "<li>" + myStringInterpolation($(this).find("Text").text(),subs) + "</li>";
+			});
+			html += "</ul>";
+			break
 	}
 
-	// End Game Scoring
-	if ($(endgamedata).find("Scoring Item Text").text() != "") {
-		var text = $(endgamedata).find("Scoring Text Item");
-		html += "<h2>Scoring</h2><ul>";
-		$(endgamedata).find("Scoring Item Text").each(function(){
-			html += "<li>" + $(this).text() + "</li>";
-		});
-		html += "</ul>";
-	}
-
+	// Put HTML into page
 	$("#GameInfo").html(html);
 }
 
