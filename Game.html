@@ -96,8 +96,8 @@ function Display(display) {
 		return
 	}
 
+	// Heading 1
 	html += "<h1>"
-
 	switch(display) {
 		case "EndGame":
 			html += "End Game";
@@ -106,10 +106,10 @@ function Display(display) {
 			html += "Setup";
 			break
 	}
-
 	html += ((NoPlayers != null) ? " - " + NoPlayers + " " + $(gamedata).find("Strings Players_Capitalise").text(): "")
 	+ "</h1>";
 
+	// Add information
 	switch(display) {
 		case "EndGame":
 			// End Game Triggers
