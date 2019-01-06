@@ -80,10 +80,10 @@ function Display(display) {
 	// Get relevant data
 	switch(display) {
 		case "EndGame":
-			displaygamedata = $(gamedata).find("Base EndGame");
+			displaygamedata = $(gamedata).find("EndGame");
 			break
 		case "Setup":
-			displaygamedata = $(gamedata).find("Base Setup");
+			displaygamedata = $(gamedata).find("Setup");
 			break
 	}
 
@@ -110,49 +110,20 @@ function Display(display) {
 	+ "</h1>";
 
 	// Add information
-	switch(display) {
-		case "EndGame":
-			// End Game Triggers
-			if ($(displaygamedata).find("Trigger Item Text").first().text() != "") {
-				var item = $(displaygamedata).find("Trigger Item");
-				html += "<h2>Trigger</h2><ul>";
-				$(item).each(function(){
-					var subs = {
-						Players: $(this).find("Players[number='" + NoPlayers + "']").text()
-					};
-					html += "<li>" + myStringInterpolation($(this).find("Text").text(),subs) + "</li>";
-				});
-				html += "</ul>";
-			}
+	$(displaygamedata).find("Section").each(function(){
+		if ($(this).find("Heading").text() != "") {
+			html += "<h2>" + $(this).find("Heading").text() + "</h2>";
+		}
 
-			// End Game Scoring
-			if ($(displaygamedata).find("Scoring Item Text").text() != "") {
-				var item = $(displaygamedata).find("Scoring Item");
-				html += "<h2>Scoring</h2><ul>";
-				$(item).each(function(){
-					var subs = {
-						Players: $(this).find("Players[number='" + NoPlayers + "']").text()
-					};
-					html += "<li>" + myStringInterpolation($(this).find("Text").text(),subs) + "</li>";
-				});
-				html += "</ul>";
-			}
-
-			break
-
-		case "Setup":
-			// Setup
-			var item = $(displaygamedata).find("Item");
-			html += "<ul>";
-			$(item).each(function(){
-				var subs = {
-					Players: $(this).find("Players[number='" + NoPlayers + "']").text()
-				};
-				html += "<li>" + myStringInterpolation($(this).find("Text").text(),subs) + "</li>";
-			});
-			html += "</ul>";
-			break
-	}
+		html += "<ul>";
+		$(this).find("Item").each(function(){
+			var subs = {
+				Players: $(this).find("Players[number='" + NoPlayers + "']").text()
+			};
+			html += "<li>" + myStringInterpolation($(this).find("Text").text(),subs) + "</li>";
+		});
+		html += "</ul>";
+	});
 
 	// Put HTML into page
 	$("#GameInfo").html(html);
