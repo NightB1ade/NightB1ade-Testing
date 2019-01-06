@@ -16,12 +16,20 @@
 	<Expansions>
 		<Expansion name="Chibis">
 			<Name>Chibis</Name>
+			<Default>true</Default>
+		</Expansion>
+		<Expansion name="Test">
+			<Name>Test</Name>
 		</Expansion>
 	</Expansions>
 	<Setup>
 		<Section>
 			<Item><Text>&lt;strong&gt;Starting Hand&lt;/strong&gt;: One objective card of each category</Text></Item>
 			<Item><Text>&lt;strong&gt;Starting Player&lt;/strong&gt;: Tallest player</Text></Item>
+		</Section>
+		<Section>
+			<Heading>Reminder</Heading>
+			<Item><Text>&lt;strong&gt;Add Plot&lt;/strong&gt;: Draw 3, place 1, replace rest onto the bottom of draw pile</Text></Item>
 		</Section>
 	</Setup>
 	<EndGame>
@@ -34,7 +42,12 @@
 				<Players number="4">7th</Players>
 			</Item>
 			<Item><Text>The player who triggers end-game gets the &lt;strong&gt;‘Emperor’ card&lt;/strong&gt; (+2 points)</Text></Item>
-			<Item><Text>All other player(s) get &lt;strong&gt;one more turn&lt;/strong&gt;</Text></Item>
+			<Item>
+				<Text>The other ${Players} get &lt;strong&gt;one more turn&lt;/strong&gt;</Text>
+				<Players number="2">player</Players>
+				<Players number="3">two players</Players>
+				<Players number="4">three players</Players>
+			</Item>
 		</Section>
 		<Section>
 			<Heading>Scoring</Heading>
@@ -49,8 +62,10 @@
 		</Section>
 	</EndGame>
 	<Variants>
-		<Item><Text>&lt;strong&gt;No instant completing&lt;/strong&gt;: If a player picks an objective card already completed in the bamboo garden, they must discard it and pick a new objective card of a category of their choosing</Text></Item>
-		<Item><Text>&lt;strong&gt;Gourmet&lt;/strong&gt;: The Panda cannot eat the bamboo’s first shoots, only the upper sections</Text></Item>
-		<Item><Text>&lt;strong&gt;Diversity&gt;/strong&gt;: At the end of the game, each set of different Objectives categories (Plots / Gardener / Panda) earns 3 additional points</Text></Item>
+		<Section>
+			<Item><Text>&lt;strong&gt;No Instant Objectives&lt;/strong&gt;: If a player picks an objective card already completed in the bamboo garden, they must discard it and pick a new objective card of a category of their choosing</Text></Item>
+			<Item><Text>&lt;strong&gt;Gourmet&lt;/strong&gt;: The Panda cannot eat the bamboo’s first shoots, only the upper sections</Text></Item>
+			<Item><Text>&lt;strong&gt;Diversity&lt;/strong&gt;: At the end of the game, each set of different Objectives categories (Plots / Gardener / Panda) earns 3 additional points</Text></Item>
+		</Section>
 	</Variants>
 </Game>

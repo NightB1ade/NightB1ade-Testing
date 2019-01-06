@@ -1,6 +1,6 @@
 body {
 	padding: 0;
-	margin: 0;
+	margin: 20px 10px;
 	font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #f0e7d5;
 	font-weight: normal;
@@ -28,9 +28,9 @@ a {
 
 /*------------------------------------------------------------------------------------------------*/
 
-body {
-	padding: 0;
-	margin: 20px 10px;
+section {
+	max-width: 1080px;
+	margin: 0 auto;
 }
 
 /*------------------------------------------------------------------------------------------------*/
@@ -65,6 +65,20 @@ td {
 input.spinner {
 	width: 50px;
 }
+
+/*------------------------------------------------------------------------------------------------*/
+
+table tr.buttons td {
+	padding-bottom: 0;
+} /* REMOVE HARD CODING */
+	table tr.buttons td button {
+		margin-bottom: 5px;
+	}
+
+	table tr.buttons td label.ui-checkboxradio-label {
+		margin-bottom: 5px;
+	}
+/* } */ /* REMOVE HARD CODING */
 
 /*------------------------------------------------------------------------------------------------*/
 

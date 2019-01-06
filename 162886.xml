@@ -24,7 +24,7 @@
 			<Heading>Lose</Heading>
 			<Item><Text>&lt;strong&gt;Too Much Blight&lt;/strong&gt;: If the last Blight comes off the Blight Card, follow the instructions there</Text></Item>
 			<Item><Text>&lt;strong&gt;A Spirit is Destroyed&lt;/strong&gt;: If any Spirit has no Presence left on the island</Text></Item>
-			<Item><Text>&lt;strong&gt;Time Runs Out&lt;/strong&gt;: If you need to draw n Invader Card (to Explore), but the Invader Deck is empty</Text></Item>
+			<Item><Text>&lt;strong&gt;Time Runs Out&lt;/strong&gt;: If you need to draw an Invader Card (to Explore), but the Invader Deck is empty</Text></Item>
 		</Section>
 	</EndGame>
 </Game>
