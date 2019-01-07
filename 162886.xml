@@ -13,7 +13,21 @@
 			<Default>3</Default>
 		</Players>
 	</Base>
+	<Expansions>
+		<Expansion name="BranchAndClaw">
+			<Name>Branch and Claw</Name>
+			<Default>true</Default>
+		</Expansion>
+	</Expansions>
 	<Setup>
+		<Section>
+			<Item><Text>Text1</Text></Item>
+			<Item><Text>Text2</Text></Item>
+		</Section>
+		<Section>
+			<Heading>Reminder</Heading>
+			<Item><Text>&lt;strong&gt;Gaining Power Cards&lt;/strong&gt;: Choose Minor or Major Power, draw 4 cards, keep one in hand, discard the rest.  If a Major Power, forget one of your Power Cards (which can be the Major Power you just chose)</Text></Item>
+		</Section>
 	</Setup>
 	<EndGame>
 		<Section>

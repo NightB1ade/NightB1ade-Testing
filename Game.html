@@ -138,6 +138,34 @@ function Display(display) {
 
 		html += "<ul>";
 		$(this).find("Item").each(function(){
+			//Return if not displayed
+			if ($(this).find("Display").text() != "") {
+				if (
+					//Base game
+					Expansions_Checked == ""
+					&& $(this).find("Display Base").text() == "false"
+				) {
+					return
+				} else if (
+					//Expansion iteration
+					Expansions_Checked != ""
+				) {
+					var IsInArray = 0;
+
+					$(this).find("Display Expansion").each(function(){
+						if (
+							$.inArray($(this).attr("name"),Expansions_Checked) != -1
+							&& $(this).text() == "true"
+						) {
+							IsInArray = 1;
+							return
+						}
+					});
+
+					if (IsInArray == 0) {return}
+				}
+			}
+
 			var subs = {
 				Players: $(this).find("Players[number='" + NoPlayers + "']").text()
 			};
