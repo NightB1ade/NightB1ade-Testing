@@ -18,10 +18,6 @@
 			<Name>Chibis</Name>
 			<Default>true</Default>
 		</Expansion>
-		<Expansion name="Test">
-			<Name>Test</Name>
-			<Default>false</Default>
-		</Expansion>
 	</Expansions>
 	<Setup>
 		<Section>

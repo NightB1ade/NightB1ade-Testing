@@ -118,7 +118,7 @@ function Display(display) {
 	html += "</h1>";
 
 	// Expansion Subheading
-	if ($(displaygamedata).find("Expansion").text() != "") {
+	if ($(displaygamedata).find("Expansion").attr("value") != "") {
 		if (Expansions_Checked == "") {
 			html += "<h3>Base Game</h3>";
 		} else {
