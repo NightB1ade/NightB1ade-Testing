@@ -14,9 +14,8 @@
 		</Players>
 	</Base>
 	<Expansions>
-		<Expansion name="BranchAndClaw">
+		<Expansion name="BranchAndClaw" default="true">
 			<Name>Branch and Claw</Name>
-			<Default>true</Default>
 		</Expansion>
 	</Expansions>
 	<Setup>

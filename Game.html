@@ -237,7 +237,7 @@ $(document).ready(function(){
 						+ "' name='"
 						+ $(this).attr("name")
 						+ "'"
-						+ (($(this).find("Default").text() == "true") ? " checked" : "")
+						+ (($(this).attr("default") == "true") ? " checked" : "")
 						+ ">";
 				});
 				html_ExpansionCheckboxes += "</td>";

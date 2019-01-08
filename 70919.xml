@@ -14,9 +14,8 @@
 		</Players>
 	</Base>
 	<Expansions>
-		<Expansion name="Chibis">
+		<Expansion name="Chibis" default="true">
 			<Name>Chibis</Name>
-			<Default>true</Default>
 		</Expansion>
 	</Expansions>
 	<Setup>
