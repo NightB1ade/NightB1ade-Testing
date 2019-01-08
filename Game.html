@@ -37,9 +37,7 @@
 	<img id="thumbnail">
 	<table id="Parameters">
 		<tr name="ExpansionButtons" class="buttons"></tr>
-		<tr name="NoPlayers" class="hidden">
-			<td class="label">No.</td>
-			<td><input class="spinner" name="NoPlayers"></td>
+		<tr name="NoPlayers">
 		</tr>
 		<tr name="DisplayButtons" class="buttons"></tr>
 	</table>
@@ -206,22 +204,24 @@ $(document).ready(function(){
 		,function(data){
 			gamedata = $(data).find("Game");
 			var html_DisplayButtons = "";
+			var html_NoPlayers = "";
 			var html_ExpansionCheckboxes = "";
 
 			// Unhide player number chooser if appropriate
-			var MinPlayers = $(gamedata).find("Base Players MinPlayers").text();
-			var MaxPlayers = $(gamedata).find("Base Players MaxPlayers").text();
-			var DefaultPlayers = $(gamedata).find("Base Players Default").text();
-			var TextPlayers = $(gamedata).find("Strings Players_Capitalise").text();
+			if ($(gamedata).find("Base Players").text() != "") {
+				var MinPlayers = $(gamedata).find("Base Players MinPlayers").text();
+				var MaxPlayers = $(gamedata).find("Base Players MaxPlayers").text();
+				var DefaultPlayers = $(gamedata).find("Base Players Default").text();
+				var TextPlayers = $(gamedata).find("Strings Players_Capitalise").text();
 
-			if (MinPlayers != MaxPlayers) {
-				$("#Parameters tr[name='NoPlayers'] .label").html("No. " + TextPlayers);
+				html_NoPlayers += "<td>No. " + TextPlayers + "</td>"
+					+ "<td><input class='spinner' name='NoPlayers'></td>";
+				$("#Parameters tr[name='NoPlayers']").html(html_NoPlayers);
 				$("input[name='NoPlayers']").spinner({
 					min: MinPlayers
 					,max: MaxPlayers
 				});
 				$("input[name='NoPlayers']").spinner("value",DefaultPlayers);
-				$("#Parameters tr[name='NoPlayers']").css("visibility","visible");
 			}
 
 			//Add Expansion Checkboxes
