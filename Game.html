@@ -111,8 +111,13 @@ function Display(display) {
 		if (Expansions_Checked_Code == "") {
 			html += "<h3>Base Game</h3>";
 		} else {
-			html += "<h3>Expansions: "
-				+ Expansions_Checked_Name.join(", ")
+			html += "<h3>";
+			if (Expansions_Checked_Code.length == 1) {
+				html += "Expansion: "
+			} else {
+				html += "Expansions: "
+			}
+			html += Expansions_Checked_Name.join(", ")
 				+ "</h3>";
 		}
 	}

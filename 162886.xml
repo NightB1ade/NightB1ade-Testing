@@ -60,6 +60,13 @@
 			<Section>
 				<Heading>Invader Phase</Heading>
 				<Item><Text>Blighted Island Effects</Text></Item>
+				<Item>
+					<Text>Event Card</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="BranchAndClaw" value="true"></Expansion>
+					</Display>
+				</Item>
 				<Item><Text>Fear Effects</Text></Item>
 				<Item><Text>Ravage</Text></Item>
 				<Item><Text>Build</Text></Item>
