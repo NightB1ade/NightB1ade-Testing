@@ -13,47 +13,78 @@
 			<Name>Branch and Claw</Name>
 		</Expansion>
 	</Expansions>
-	<Setup>
-		<Section>
-			<Item><Text>&lt;strong&gt;4 Fear Markers&lt;/strong&gt; per Spirit</Text></Item>
-			<Item><Text>Create &lt;strong&gt;Fear Deck&lt;/strong&gt; (default 3/3/3)</Text></Item>
-			<Item><Text>Create &lt;strong&gt;Invader Deck&lt;/strong&gt; (default 111-2222-33333)</Text></Item>
-			<Item><Text>Island boards and printed tokens</Text></Item>
-			<Item>
-				<Text>&lt;strong&gt;Beast Token&lt;/strong&gt;: Lowest numbered no printed Setup</Text>
-				<Display>
-					<Base value="false"></Base>
-					<Expansion name="BranchAndClaw" value="true"></Expansion>
-				</Display>
-			</Item>
-			<Item>
-				<Text>&lt;strong&gt;Disease Token&lt;/strong&gt;: Land #2</Text>
-				<Display>
-					<Base value="false"></Base>
-					<Expansion name="BranchAndClaw" value="true"></Expansion>
-				</Display>
-			</Item>
-			<Item><Text>Initial &lt;strong&gt;Explore&lt;/strong&gt;</Text></Item>
-		</Section>
-		<Section>
-			<Heading>Reminder</Heading>
-			<Item><Text>&lt;strong&gt;Gaining Power Cards&lt;/strong&gt;: Choose Minor or Major Power, draw 4 cards, keep one in hand, discard the rest.  If a Major Power, forget one of your Power Cards (which can be the Major Power you just chose)</Text></Item>
-			<Item><Text>&lt;strong&gt;Invader Build&lt;/strong&gt;: If Invaders present, add a City if Towns outnumber Cities on the land, otherwise add a Town</Text></Item>
-			<Item><Text>&lt;strong&gt;Invader Explore&lt;/strong&gt;: Add an Explorer to a land if it is has a Town or City, or it is adjacent to a Town, City, or Ocean</Text></Item>
-			<Item><Text>&lt;strong&gt;Stage II Escalation&lt;/strong&gt;: Effects happen as soon as the card is revealed, before Explore, unless stated otherwise</Text></Item>
-			<Item><Text>&lt;strong&gt;Repositioning Presence&lt;/strong&gt;: Whenever you would add a Presence from your Presence Track, you can instead use one from anywhere on the island</Text></Item>
-		</Section>
-	</Setup>
-	<EndGame>
-		<Section>
-			<Heading>Win</Heading>
-			<Item><Text>Anytime you meet the current victory condition</Text></Item>
-		</Section>
-		<Section>
-			<Heading>Lose</Heading>
-			<Item><Text>&lt;strong&gt;Too Much Blight&lt;/strong&gt;: If the last Blight comes off the Blight Card, follow the instructions there</Text></Item>
-			<Item><Text>&lt;strong&gt;A Spirit is Destroyed&lt;/strong&gt;: If any Spirit has no Presence left on the island</Text></Item>
-			<Item><Text>&lt;strong&gt;Time Runs Out&lt;/strong&gt;: If you need to draw an Invader Card (to Explore), but the Invader Deck is empty</Text></Item>
-		</Section>
-	</EndGame>
+	<DisplayButtons>
+		<Setup>
+			<Name>Setup</Name>
+			<Section>
+				<Item><Text>&lt;strong&gt;4 Fear Markers&lt;/strong&gt; per Spirit</Text></Item>
+				<Item><Text>Create &lt;strong&gt;Fear Deck&lt;/strong&gt; (default 3/3/3)</Text></Item>
+				<Item><Text>Create &lt;strong&gt;Invader Deck&lt;/strong&gt; (default 111-2222-33333)</Text></Item>
+				<Item><Text>Island boards and printed tokens</Text></Item>
+				<Item>
+					<Text>&lt;strong&gt;Beast Token&lt;/strong&gt;: Lowest numbered no printed Setup</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="BranchAndClaw" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Disease Token&lt;/strong&gt;: Land #2</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="BranchAndClaw" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item><Text>Initial &lt;strong&gt;Explore&lt;/strong&gt;</Text></Item>
+			</Section>
+			<Section>
+				<Heading>Reminder</Heading>
+				<Item><Text>&lt;strong&gt;Gaining Power Cards&lt;/strong&gt;: Choose Minor or Major Power, draw 4 cards, keep one in hand, discard the rest.  If a Major Power, forget one of your Power Cards (which can be the Major Power you just chose)</Text></Item>
+				<Item><Text>&lt;strong&gt;Invader Build&lt;/strong&gt;: If Invaders present, add a City if Towns outnumber Cities on the land, otherwise add a Town</Text></Item>
+				<Item><Text>&lt;strong&gt;Invader Explore&lt;/strong&gt;: Add an Explorer to a land if it is has a Town or City, or it is adjacent to a Town, City, or Ocean</Text></Item>
+				<Item><Text>&lt;strong&gt;Stage II Escalation&lt;/strong&gt;: Effects happen as soon as the card is revealed, before Explore, unless stated otherwise</Text></Item>
+				<Item><Text>&lt;strong&gt;Repositioning Presence&lt;/strong&gt;: Whenever you would add a Presence from your Presence Track, you can instead use one from anywhere on the island</Text></Item>
+			</Section>
+		</Setup>
+		<TurnOrder>
+			<Name>Turn Order</Name>
+			<Section>
+				<Heading>Spirit Phase</Heading>
+				<Item><Text>Growth</Text></Item>
+				<Item><Text>Gain Energy</Text></Item>
+				<Item><Text>Play and pay for Power Cards</Text></Item>
+			</Section>
+			<Section>
+				<Heading>Fast Power Phase</Heading>
+			</Section>
+			<Section>
+				<Heading>Invader Phase</Heading>
+				<Item><Text>Blighted Island Effects</Text></Item>
+				<Item><Text>Fear Effects</Text></Item>
+				<Item><Text>Ravage</Text></Item>
+				<Item><Text>Build</Text></Item>
+				<Item><Text>Explore</Text></Item>
+				<Item><Text>Advance Invader Cards</Text></Item>
+			</Section>
+			<Section>
+				<Heading>Slow Power Phase</Heading>
+			</Section>
+			<Section>
+				<Heading>Time Passes</Heading>
+			</Section>
+		</TurnOrder>
+		<EndGame>
+			<Name>End Game</Name>
+			<Section>
+				<Heading>Win</Heading>
+				<Item><Text>Anytime you meet the current victory condition</Text></Item>
+			</Section>
+			<Section>
+				<Heading>Lose</Heading>
+				<Item><Text>&lt;strong&gt;Too Much Blight&lt;/strong&gt;: If the last Blight comes off the Blight Card, follow the instructions there</Text></Item>
+				<Item><Text>&lt;strong&gt;A Spirit is Destroyed&lt;/strong&gt;: If any Spirit has no Presence left on the island</Text></Item>
+				<Item><Text>&lt;strong&gt;Time Runs Out&lt;/strong&gt;: If you need to draw an Invader Card (to Explore), but the Invader Deck is empty</Text></Item>
+			</Section>
+		</EndGame>
+	</DisplayButtons>
 </Game>

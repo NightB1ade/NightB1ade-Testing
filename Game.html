@@ -78,20 +78,7 @@ function Display(display) {
 	}).get();
 
 	// Get relevant data
-	switch(display) {
-		case "EndGame":
-			displaygamedata = $(gamedata).find("EndGame");
-			html += "End Game";
-			break
-		case "Setup":
-			displaygamedata = $(gamedata).find("Setup");
-			html += "Setup"
-			break
-		case "Variants":
-			displaygamedata = $(gamedata).find("Variants");
-			html += "Variants";
-			break
-	}
+	displaygamedata = $(gamedata).find("DisplayButtons " + display);
 
 	// Alert and return if No. Players is NULL
 	if (
@@ -104,19 +91,20 @@ function Display(display) {
 	}
 
 	// Heading 1
-	html = "<h1>" + html;
-	html += (
-		(
-			$(displaygamedata).find("Item Players").text() != ""
-			&& NoPlayers != null
+	html += "<h1>"
+		+ $(displaygamedata).children("Name").text()
+		+ (
+			(
+				$(displaygamedata).find("Item Players").text() != ""
+				&& NoPlayers != null
+			)
+			? " - "
+				+ NoPlayers
+				+ " "
+				+ $(gamedata).find("Strings Players_Capitalise").text()
+			: ""
 		)
-		? " - "
-			+ NoPlayers
-			+ " "
-			+ $(gamedata).find("Strings Players_Capitalise").text()
-		: ""
-	);
-	html += "</h1>";
+		+ "</h1>";
 
 	// Expansion Subheading
 	if ($(displaygamedata).find("Expansion").attr("value") != null) {
@@ -234,13 +222,13 @@ $(document).ready(function(){
 					html_ExpansionCheckboxes += " <label for='Checkbox_Expansion_"
 						+ $(this).attr("name")
 						+ "'>"
-						+ $(this).find("Name").text()
+						+ $(this).children("Name").text()
 						+ "</label><input type='checkbox' class='Checkbox_Expansion' id='Checkbox_Expansion_"
 						+ $(this).attr("name")
 						+ "' name='"
 						+ $(this).attr("name")
 						+ "' DisplayName='"
-						+ $(this).find("Name").text()
+						+ $(this).children("Name").text()
 						+ "'"
 						+ (($(this).attr("default") == "true") ? " checked" : "")
 						+ ">";
@@ -251,15 +239,11 @@ $(document).ready(function(){
 			$("#Parameters tr[name='ExpansionButtons']").html(html_ExpansionCheckboxes);
 
 			//Add Relevant Display Buttons
-			if ($(gamedata).find("Setup").text() != "") {
-				html_DisplayButtons += " <button onclick=\"Display('Setup')\">Setup</button>";
-			}
-			if ($(gamedata).find("EndGame").text() != "") {
-				html_DisplayButtons += " <button onclick=\"Display('EndGame')\">End Game</button>";
-			}
-			if ($(gamedata).find("Variants").text() != "") {
-				html_DisplayButtons += " <button onclick=\"Display('Variants')\">Variants</button>";
-			}
+			$(gamedata).find("DisplayButtons").children().each(function(){
+				html_DisplayButtons += " <button onclick=\"Display('" + this.nodeName + "')\">"
+					+ $(this).children("Name").text()
+					+ "</button>";
+			});
 
 			if (html_DisplayButtons != "") {
 				html_DisplayButtons = "<td colspan='2'>" + html_DisplayButtons + "</td>";
