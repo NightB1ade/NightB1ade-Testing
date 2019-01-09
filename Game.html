@@ -70,8 +70,11 @@ function Display(display) {
 	var displaygamedata;
 	var html = "";
 	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
-	var Expansions_Checked = $(".Checkbox_Expansion:checked").map(function(){
-		return this.name;
+	var Expansions_Checked_Code = $(".Checkbox_Expansion:checked").map(function(){
+		return $(this).attr("name");
+	}).get();
+	var Expansions_Checked_Name = $(".Checkbox_Expansion:checked").map(function(){
+		return $(this).attr("DisplayName");
 	}).get();
 
 	// Get relevant data
@@ -117,11 +120,11 @@ function Display(display) {
 
 	// Expansion Subheading
 	if ($(displaygamedata).find("Expansion").attr("value") != null) {
-		if (Expansions_Checked == "") {
+		if (Expansions_Checked_Code == "") {
 			html += "<h3>Base Game</h3>";
 		} else {
 			html += "<h3>Expansions: "
-				+ Expansions_Checked.join(", ")
+				+ Expansions_Checked_Name.join(", ")
 				+ "</h3>";
 		}
 	}
@@ -140,19 +143,19 @@ function Display(display) {
 			if ($(this).find("Display").text() != "") {
 				if (
 					//Base game
-					Expansions_Checked == ""
+					Expansions_Checked_Code == ""
 					&& $(this).find("Display Base").attr("value") != "true"
 				) {
 					return
 				} else if (
 					//Expansion iteration
-					Expansions_Checked != ""
+					Expansions_Checked_Code != ""
 				) {
 					var IsInArray = 0;
 
 					$(this).find("Display Expansion").each(function(){
 						if (
-							$.inArray($(this).attr("name"),Expansions_Checked) != -1
+							$.inArray($(this).attr("name"),Expansions_Checked_Code) != -1
 							&& $(this).attr("value") == "true"
 						) {
 							IsInArray = 1;
@@ -236,6 +239,8 @@ $(document).ready(function(){
 						+ $(this).attr("name")
 						+ "' name='"
 						+ $(this).attr("name")
+						+ "' DisplayName='"
+						+ $(this).find("Name").text()
 						+ "'"
 						+ (($(this).attr("default") == "true") ? " checked" : "")
 						+ ">";
