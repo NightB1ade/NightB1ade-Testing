@@ -205,9 +205,9 @@ $(document).ready(function(){
 
 			// Unhide player number chooser if appropriate
 			if ($(gamedata).find("Base Players").text() != "") {
-				var MinPlayers = $(gamedata).find("Base Players MinPlayers").text();
-				var MaxPlayers = $(gamedata).find("Base Players MaxPlayers").text();
-				var DefaultPlayers = $(gamedata).find("Base Players Default").text();
+				var MinPlayers = $(gamedata).find("Base Players").attr("min");
+				var MaxPlayers = $(gamedata).find("Base Players").attr("max");
+				var DefaultPlayers = $(gamedata).find("Base Players").attr("default");
 				var TextPlayers = $(gamedata).find("Strings Players_Capitalise").text();
 
 				html_NoPlayers += "<td>No. " + TextPlayers + "</td>"

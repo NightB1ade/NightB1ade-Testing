@@ -7,11 +7,7 @@
 		<Players_Lower>players</Players_Lower>
 	</Strings>
 	<Base>
-		<Players>
-			<MinPlayers>2</MinPlayers>
-			<MaxPlayers>4</MaxPlayers>
-			<Default>3</Default>
-		</Players>
+		<Players min="2" max="4" default="3"></Players>
 	</Base>
 	<Expansions>
 		<Expansion name="Chibis" default="true">
