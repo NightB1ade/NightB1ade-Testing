@@ -204,10 +204,10 @@ $(document).ready(function(){
 			var html_ExpansionCheckboxes = "";
 
 			// Unhide player number chooser if appropriate
-			if ($(gamedata).find("Base Players").text() != "") {
-				var MinPlayers = $(gamedata).find("Base Players").attr("min");
-				var MaxPlayers = $(gamedata).find("Base Players").attr("max");
-				var DefaultPlayers = $(gamedata).find("Base Players").attr("default");
+			if ($(gamedata).find("Players Base").length != 0) {
+				var MinPlayers = $(gamedata).find("Players Base").attr("min");
+				var MaxPlayers = $(gamedata).find("Players Base").attr("max");
+				var DefaultPlayers = $(gamedata).find("Players Base").attr("default");
 				var TextPlayers = $(gamedata).find("Strings Players_Capitalise").text();
 
 				html_NoPlayers += "<td>No. " + TextPlayers + "</td>"

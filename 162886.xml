@@ -6,8 +6,6 @@
 		<Players_Capitalise>Spirits</Players_Capitalise>
 		<Players_Lower>spirits</Players_Lower>
 	</Strings>
-	<Base>
-	</Base>
 	<Expansions>
 		<Expansion name="BranchAndClaw" default="true">
 			<Name>Branch and Claw</Name>
