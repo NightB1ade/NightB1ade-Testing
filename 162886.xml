@@ -40,6 +40,8 @@
 			<Section>
 				<Heading>Reminder</Heading>
 				<Item><Text>&lt;strong&gt;Gaining Power Cards&lt;/strong&gt;: Choose Minor or Major Power, draw 4 cards, keep one in hand, discard the rest.  If a Major Power, forget one of your Power Cards (which can be the Major Power you just chose)</Text></Item>
+				<Item><Text>&lt;strong&gt;Fear Cards&lt;/strong&gt;: Resolved in the order they were earned</Text></Item>
+				<Item><Text>&lt;strong&gt;Multiple Invader Cards&lt;/strong&gt;: If there are multiple Invader Cards on a single Action Space.  Perform the card that got there first (the bottom one)</Text></Item>
 				<Item><Text>&lt;strong&gt;Invader Build&lt;/strong&gt;: If Invaders present, add a City if Towns outnumber Cities on the land, otherwise add a Town</Text></Item>
 				<Item><Text>&lt;strong&gt;Invader Explore&lt;/strong&gt;: Add an Explorer to a land if it is has a Town or City, or it is adjacent to a Town, City, or Ocean</Text></Item>
 				<Item><Text>&lt;strong&gt;Stage II Escalation&lt;/strong&gt;: Effects happen as soon as the card is revealed, before Explore, unless stated otherwise</Text></Item>
@@ -70,6 +72,7 @@
 				<Item><Text>Fear Effects</Text></Item>
 				<Item><Text>Ravage</Text></Item>
 				<Item><Text>Build</Text></Item>
+				<Item><Text>Stage II Escalation</Text></Item>
 				<Item><Text>Explore</Text></Item>
 				<Item><Text>Advance Invader Cards</Text></Item>
 			</Section>
