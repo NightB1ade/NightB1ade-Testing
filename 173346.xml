@@ -4,4 +4,13 @@
 	<Name>7 Wonders Duel</Name>
 	<Base>
 	</Base>
+	<DisplayButtons>
+		<Setup>
+			<Name>Setup</Name>
+			<Section>
+				<Heading>Reminder</Heading>
+				<Item><Text>&lt;strong&gt;Wonder Selection Phase&lt;/strong&gt;: Deal 4 Wonders out, players pick using 1221 order, deal 4 more Wonders, players pick using 2112 order</Text></Item>
+			</Section>
+		</Setup>
+	</DisplayButtons>
 </Game>
