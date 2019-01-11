@@ -24,8 +24,69 @@
 			<Name>Setup</Name>
 			<Section>
 				<Item><Text>&lt;strong&gt;Door Markers&lt;/strong&gt;: Internal doorways</Text></Item>
-				<Item><Text>&lt;strong&gt;Point 2&lt;/strong&gt;: Blurb 2</Text></Item>
+				<Item><Text>&lt;strong&gt;First Explosion&lt;/strong&gt;: Roll dice, add Fire and Hot Spot markers, resolve an Explosion</Text></Item>
+				<Item><Text>&lt;strong&gt;Second Explosion&lt;/strong&gt;: Roll until target space that is not on fire, add Fire and Hot Spot markers, resolve an Explosion</Text></Item>
+				<Item><Text>&lt;strong&gt;Third Explosion&lt;/strong&gt;: Flip over black die, roll red die until target space that is not on fire, add Fire and Hot Spot markers, resolve an Explosion</Text></Item>
+				<Item>
+					<Text>&lt;strong&gt;Fourth Explosion&lt;/strong&gt;: Roll until target space that is not on fire, add Fire and Hot Spot markers, resolve an Explosion</Text>
+					<Display>
+						<Difficulty name="Recruit" value="false"></Difficulty>
+						<Difficulty name="Veteran" value="false"></Difficulty>
+						<Difficulty name="Heroic" value="true"></Difficulty>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Hazmats&lt;/strong&gt;: Roll to place &lt;strong&gt;${Difficulty}&lt;/strong&gt; markers, re-roll if target space is on fire</Text>
+					<Difficulty name="Recruit">3</Difficulty>
+					<Difficulty name="Veteran">4</Difficulty>
+					<Difficulty name="Heroic">5</Difficulty>
+				</Item>
+				<Item><Text>&lt;strong&gt;POI Markers&lt;/strong&gt;: Create a pool of 10 Victims and 5 False Alarms, roll to place &lt;strong&gt;3&lt;/strong&gt;, re-roll if target space is on fire</Text></Item>
+				<Item>
+					<Text>&lt;strong&gt;Difficulty Hotspots&lt;/strong&gt;: Add &lt;strong&gt;3&lt;/strong&gt; additional Hot Spots</Text>
+					<Display>
+						<Difficulty name="Recruit" value="false"></Difficulty>
+						<Difficulty name="Veteran" value="true"></Difficulty>
+						<Difficulty name="Heroic" value="true"></Difficulty>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Firefighters Hotspots&lt;/strong&gt;: Add &lt;strong&gt;${Players}&lt;/strong&gt; additional Hot Spots</Text>
+					<Players number="3">2</Players>
+					<Players number="4">3</Players>
+					<Players number="5">3</Players>
+					<Players number="6">3</Players>
+					<Display>
+						<Players number="2" value="false"></Players>
+						<Players number="3" value="true"></Players>
+						<Players number="4" value="true"></Players>
+						<Players number="5" value="true"></Players>
+						<Players number="6" value="true"></Players>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Hot Spot Reserve&lt;/strong&gt;: Place &lt;strong&gt;${Difficulty}&lt;/strong&gt; on the board as reserve</Text>
+					<Difficulty name="Recruit">6</Difficulty>
+					<Difficulty name="Veteran">6</Difficulty>
+					<Difficulty name="Heroic">12</Difficulty>
+				</Item>
+				<Item><Text>Firefighters are placed on any space outside the house</Text></Item>
+				<Item><Text>Ambulance and Fire Engine are place on a space chosen by the group</Text></Item>
+				<Item><Text>Players decide who goes first, otherwise youngest player</Text></Item>
 			</Section>
 		</Setup>
+		<Variants>
+			<Name>Variants</Name>
+			<Section>
+				<Item><Text>&lt;strong&gt;A Lone Engine Company&lt;/strong&gt;: Your volunteer firefighter crew has to respond quickly with the limited resources on hand.  Randomly select Specialist cards, Crew Change action is not available</Text></Item>
+				<Item><Text>&lt;strong&gt;Unmarked Hazards&lt;/strong&gt;: You never know what lies beneath the ? mark.  No Hazmat markers during inital setup, each False Alarm places a Hazmat token</Text></Item>
+				<Item><Text>&lt;strong&gt;Murphy Strikes&lt;/strong&gt;: A broken water main hampers strctural firefighting.  The Deck Gun action is not available</Text></Item>
+				<Item><Text>&lt;strong&gt;Overtaking an Arsonist&lt;/strong&gt;: This fire wasn't an accident, you will need to collect the evidence to catch the perp.  Place &lt;strong&gt;6&lt;/strong&gt; Hazmats during initial setup, at Rescue at least 7 Victims and Retrieve 3 Hazmat markers to win</Text></Item>
+				<Item><Text>&lt;strong&gt;The Original Hero&lt;/strong&gt;: Think you are hot stuff?  Try winning the Heroic level as it was first envisioned.  Please &lt;strong&gt;3&lt;/strong&gt; more Hot Spots during initial setup, please all remaining Hot Spots into the reserve</Text></Item>
+				<Item><Text>&lt;strong&gt;A Friend in Need&lt;/strong&gt;: Get Knocked Down and your Fellow Firefighters must get you back to the Ambulance.  A Knocked Down Firefighter cannot take any Actions until they have been Treated by the Medic or Carried to the Ambulance.  They count as a Victim for other Firefighters to carry them</Text></Item>
+				<Item><Text>&lt;strong&gt;A Hotter Spot&lt;/strong&gt;: It's not just an extra Advanced Fire Roll.  When the Target space of the Advanced Fire roll contains a Hot Spot, please a Fire marker instead of just Smoke</Text></Item>
+				<Item><Text>&lt;strong&gt;Save the Structure&lt;/strong&gt;: An abandoned building, your crew is instructed to use a defensive approach.  No POI, No Hazmats, place &lt;strong&gt;18&lt;/strong&gt; Hot Spots during initial setup, Flare-Ups do not add a Hot Spot, cleared Hot Spots do not re-enter play, victory with all Hot Spots cleared, loss if Building Collapses, or a Firefighter is Downed</Text></Item>
+			</Section>
+		</Variants>
 	</DisplayButtons>
 </Game>

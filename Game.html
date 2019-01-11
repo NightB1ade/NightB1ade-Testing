@@ -37,8 +37,8 @@
 	<img id="thumbnail">
 	<table id="Parameters">
 		<tr name="ExpansionButtons" class="buttons"></tr>
-		<tr name="NoPlayers">
-		</tr>
+		<tr name="NoPlayers"></tr>
+		<tr name="Difficulty"></tr>
 		<tr name="DisplayButtons" class="buttons"></tr>
 	</table>
 </span>
@@ -70,6 +70,7 @@ function Display(display) {
 	var displaygamedata;
 	var html = "";
 	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
+	var Difficulty = $("select[name='Difficulty'] option:selected").text();
 	var Expansions_Checked_Code = $(".Checkbox_Expansion:checked").map(function(){
 		return $(this).attr("name");
 	}).get();
@@ -84,7 +85,7 @@ function Display(display) {
 	if (
 		$("#Parameters tr[name='NoPlayers']").css("visibility") == "visible"
 		&& NoPlayers == null
-		&& $(displaygamedata).find("Item Players").text() != ""
+		&& $(displaygamedata).find("Item Players").length != 0
 	) {
 		alert("Please set number of " + $(gamedata).find("Strings Players_Lower").text());
 		return
@@ -95,7 +96,7 @@ function Display(display) {
 		+ $(displaygamedata).children("Name").text()
 		+ (
 			(
-				$(displaygamedata).find("Item Players").text() != ""
+				$(displaygamedata).find("Item Players").length != 0
 				&& NoPlayers != null
 			)
 			? " - "
@@ -106,8 +107,8 @@ function Display(display) {
 		)
 		+ "</h1>";
 
-	// Expansion Subheading
-	if ($(displaygamedata).find("Expansion").attr("value") != null) {
+	// Subheading
+	if ($(displaygamedata).find("Expansion").length != 0) {
 		if (Expansions_Checked_Code == "") {
 			html += "<h3>Base Game</h3>";
 		} else {
@@ -122,9 +123,16 @@ function Display(display) {
 		}
 	}
 
+	if (
+		$(displaygamedata).find("Difficulty").length != 0
+		&& Difficulty != ""
+	) {
+		html += "<h3>Difficulty: " + Difficulty + "</h3>";
+	}
+
 	// Add information
 	$(displaygamedata).find("Section").each(function(){
-		if ($(this).find("Heading").text() != "") {
+		if ($(this).find("Heading").length != 0) {
 			html += "<h2>"
 				+ $(this).find("Heading").text()
 				+ "</h2>";
@@ -133,7 +141,7 @@ function Display(display) {
 		html += "<ul>";
 		$(this).find("Item").each(function(){
 			//Return if not displayed
-			if ($(this).find("Display").text() != "") {
+			if ($(this).find("Display Expansion").length != 0) {
 				if (
 					//Base game
 					Expansions_Checked_Code == ""
@@ -160,8 +168,26 @@ function Display(display) {
 				}
 			}
 
+			//Players
+			if (
+				$(this).find("Display Players").length != 0
+				&& $(this).find("Display Players[number='" + NoPlayers + "']").attr("value") != "true"
+			) {
+				return
+			}
+
+			//Difficulty
+			if (
+				$(this).find("Display Difficulty").length != 0
+				&& $(this).find("Display Difficulty[name='" + Difficulty + "']").attr("value") != "true"
+			) {
+				return
+			}
+
+			//Substitution Array
 			var subs = {
 				Players: $(this).find("Players[number='" + NoPlayers + "']").text()
+				,Difficulty: $(this).find("Difficulty[name='" + Difficulty + "']").text()
 			};
 
 			html += "<li>"
@@ -200,7 +226,6 @@ $(document).ready(function(){
 		,function(data){
 			gamedata = $(data).find("Game");
 			var html_DisplayButtons = "";
-			var html_NoPlayers = "";
 			var html_ExpansionCheckboxes = "";
 
 			// Unhide player number chooser if appropriate
@@ -210,7 +235,7 @@ $(document).ready(function(){
 				var DefaultPlayers = $(gamedata).find("Players Base").attr("default");
 				var TextPlayers = $(gamedata).find("Strings Players_Capitalise").text();
 
-				html_NoPlayers += "<td>No. " + TextPlayers + "</td>"
+				var html_NoPlayers = "<td>No. " + TextPlayers + "</td>"
 					+ "<td><input class='spinner' name='NoPlayers'></td>";
 				$("#Parameters tr[name='NoPlayers']").html(html_NoPlayers);
 				$("input[name='NoPlayers']").spinner({
@@ -220,8 +245,27 @@ $(document).ready(function(){
 				$("input[name='NoPlayers']").spinner("value",DefaultPlayers);
 			}
 
+			//Unhide difficulty chooser if appropriate
+			if ($(gamedata).children("Difficulty").length != 0) {
+				var html_Difficulty = "<td>Difficulty</td>"
+					+ "<td><select name='Difficulty'>";
+
+				$(gamedata).children("Difficulty").children().each(function(){
+					html_Difficulty += "<option"
+						+ (($(this).attr("default") == "true") ? " selected='selected'" : "")
+						+ ">"
+						+ $(this).text()
+						+ "</option>";
+				});
+
+				html_Difficulty += "</select></td>";
+
+				$("#Parameters tr[name='Difficulty']").html(html_Difficulty);
+				$("select").selectmenu({width:150});
+			}
+
 			//Add Expansion Checkboxes
-			if ($(gamedata).find("Expansions").text() != "") {
+			if ($(gamedata).find("Expansions").length != 0) {
 				html_ExpansionCheckboxes += "<td>Expansions</td><td>";
 				$(gamedata).find("Expansions Expansion").each(function(){
 					html_ExpansionCheckboxes += " <label for='Checkbox_Expansion_"
