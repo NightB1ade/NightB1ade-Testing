@@ -6,7 +6,187 @@
 		<Players_Capitalise>Players</Players_Capitalise>
 		<Players_Lower>players</Players_Lower>
 	</Strings>
+	<Expansions>
+		<Expansion name="Crossroads" default="true">
+			<Name>Crossroads</Name>
+		</Expansion>
+		<Expansion name="Matsuri" default="true">
+			<Name>Matsuri</Name>
+		</Expansion>
+	</Expansions>
 	<DisplayButtons>
+		<Setup>
+			<Name>Setup</Name>
+			<Section>
+				<Heading>Characters</Heading>
+				<Item>
+					<Text>&lt;strong&gt;Ayumu the walker&lt;/strong&gt;: Meal cards only cost Ayumu 1 coin, regardless of their normal costs.  In additon, when at a Shop space, the Souvenirs of the “Small object” type cost him nothing</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Chihaya the bather&lt;/strong&gt;: When stopping at the intermediate Inns, Chihaya receives a Hot Spring card randomly drawn from the stack</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item><Text>&lt;strong&gt;Chuubei the messenger&lt;/strong&gt;: When Chuubei arrives at each of the 3 intermediate Inns, before the Meal he draws 1 Encounter card and applies its effect</Text></Item>
+				<Item>
+					<Text>&lt;strong&gt;Daigoro the kid&lt;/strong&gt;: Daigoro draws a Souvenir card when he arrives at each of the three intermediate Inns, before the Meal</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Crossroads" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Gotozaemon the souvenir seller&lt;/strong&gt;: Gotozaemon gains a coin at each stop on a Panorama space.  Note: The Souvenir seller gains an additional coin only when he stops on a Panorama space, not when he encounters a Guide (Annaibito).  If he decides to take a Cherry Tree, he gains 2 points and 2 coins</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Crossroads" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item><Text>&lt;strong&gt;Hiroshige the artist&lt;/strong&gt;: When Hiroshige arrives at each of the 3 intermediate Inns, before the Meal he takes 1 Panorama card of his choice, scoring the points for this card immediately</Text></Item>
+				<Item><Text>&lt;strong&gt;Hirotada the priest&lt;/strong&gt;: Each time he stops at the Temple, Hirotada can take on coin from the bank and donate it to the Temple, scoring 1 point for this coin.  This is in addition to the 1, 2, or 3 coins he can personally donate to the Temple</Text></Item>
+				<Item>
+					<Text>&lt;strong&gt;Iyasaka the manual worker&lt;/strong&gt;: When stopping at a Farm space, Iyasaka receives 1 additional coin if he chooses to take 3 coins from the bank OR Iyasaka can re-roll the Fortune die if he chooses to try his luck in the Gaming Room (the second result must be used, even if it is worse than the first one)</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Jirocho the yakuza&lt;/strong&gt;: When he arrives at one of the three intermediate Inns, before the Meal, Jirocho can try his luck in the Gaming Room.  He must then bet 1 coin and roll the Fortune die.  Depending on the result, he may lose his coin, get it back, or get it back and win 1, 2, or 3 additional coins</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Crossroads" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Kamui the vagabond&lt;/strong&gt;: When stopping at the intermediate Inns and the last Inn, Kamui scores 3 points if he doesn’t buy a Meal card</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Kidzuna the cook&lt;/strong&gt;: When stopping at the intermediate Inns, Kidzuna can buy another Meal IN ADDITION to her usual Meal.  First, she reveals the first card of the Meal stack and can buy it at the indicated cost.  She scores the corresponding Journey points.  Kidzuna then proceeds to purchase her main Meal according to the usual rules</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item><Text>&lt;strong&gt;Kinko the ronin&lt;/strong&gt;: Each Meal card purchased by Kinko costs one coin less (Meals that cost 1 are therefore free)</Text></Item>
+				<Item>
+					<Text>&lt;strong&gt;Kita the old woman&lt;/strong&gt;: Kita can carry out both actions when stopping at an Encounter space: draw an Encounter card AND buy a Calligraphy card</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Crossroads" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Kushinada the world traveller&lt;/strong&gt;: At the beginning of the game, all the other Travellers give 1 coin each to Kushinada.  During the game, at any time, Kushinada can secretly look at her opponents’ Calligraphy and Amulet cards.  Note: In a 2-player game, Kushinada’s opponent gives her 1 coin, and Kushinada takes 1 coin from the bank</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Mari the poet&lt;/strong&gt;: When stopping at a Temple space, Mari scores 2 Journey points (instead of 1) for each coin she donates to the Temple.  If she decides to buy an Amulet, Mari can take it for free</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Marihito the writer&lt;/strong&gt;: At the end of the game, Marihito can double one of the Calligraphy cards of his collection</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Misaki the disciple&lt;/strong&gt;: Every time a Traveller (him or another) stops at a Temple space, Misaki takes 1 coin from the bank</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Mitsukuni the old man&lt;/strong&gt;: Mitsukuni earns 1 additional point for each Hot Spring card and each achievement card</Text>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Miyataka the supersitious woman&lt;/strong&gt;: Miyataka can carry out both actions when stopping at a Temple space: give coins to the Temple AND buy an Amulet</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Crossroads" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Musubi the rogue&lt;/strong&gt;: When stopping at the intermediate Inns, Musubi can take 1 coin from each of his two neighbouring Travellers (the ones who arrived immediately before and after him).  If an affected Traveller has no coins in his possession Musubi takes 1 coin from the bank instead.  Similarly, if Musubi arrived first or last at the Inn (and has only one neighbour), he takes 1 coin from the neighbouring Traveller and 1 coin from the bank</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Mutsumi the brute&lt;/strong&gt;: At the first 4 Inns, Mutsumi can leave the Inn first, regardless of the order in which he arrived at the Inn</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Nampo the gourmet&lt;/strong&gt;: Nampo scores additional points, at each Inn, depending on the value of the Meal that he eats. One Meal worth 1 coin gives 1 additional point, one meal worth 2 coins gives 2 additional points, one Meal worth 3 coins gives 3 additional points</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Crossroads" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Rakuren the collector&lt;/strong&gt;: When stopping at a Shop space, Rakuren can choose to randomly draw 4 Souvenir cards AND 1 Legendary Object card, instead of the usual Shop’s actions.  He can then buy one or several of these cards at their indicated costs</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item><Text>&lt;strong&gt;Satsuki the orphan&lt;/strong&gt;: When she arrives at an Inn, Satsuki receives the first Meal card from the Meal cards pile for free.  Note: After seeing the Meal offered to her, she can instead purchase a Meal as normal like other players</Text></Item>
+				<Item><Text>&lt;strong&gt;Sasayakko the geisha&lt;/strong&gt;: In the Village, if Sasayakko purchases at least two Souvenir cards, the cheapest Souvenir is free.  Note: She must have the coins on hand to pay for all Souvenirs, but she doesn’t pay for the cheapest one</Text></Item>
+				<Item>
+					<Text>&lt;strong&gt;Suseri the erudite&lt;/strong&gt;: At the end of the game, Suseri socres 1 point for each different type of card in her collection.  The different types of cards are as follows: Hot Spring, Bathhouse, Souvenir, Legendary Object, Encounter, Calligraphy, Amulet, Meal, Sea Panorama, Mountain Panorama, Rice Paddy Panorama, Cherry Tree</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Takeru the counsellor&lt;/strong&gt;: Every time a Traveller (him or another) stops at an Encounter space, Takeru takes 1 coin from the bank</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Titia the dutch tourist&lt;/strong&gt;: Titia buys Souvenirs of the “Art” type and Legendary Objects for 1 coin less than normal.  Some cards will therefore be free for Titia</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item><Text>&lt;strong&gt;Umegae the street entertainer&lt;/strong&gt;: Umegae earns 1 point and 1 coin for each Encounter before the effects of the drawn Encounter card are applied</Text></Item>
+				<Item>
+					<Text>&lt;strong&gt;Yashima the noble&lt;/strong&gt;: At the intermediate Inns, Yashima receives a free and random Amulet card.  Note: If there are no Amulet cards remaining in the stack, Yashima can no longer benefit from her ability</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="Matsuri" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item><Text>&lt;strong&gt;Yoshiyasu the functionary&lt;/strong&gt;: During each Encounter, Yoshiyasu draws 2 Encounter cards, keeps the one he wishes, then places the other card at the bottom of the pile (without showing it to the other players)</Text></Item>
+				<Item><Text>&lt;strong&gt;Zen-emon the merchant&lt;/strong&gt;: Once per Village, Zen-emon can purchase one Souvenir for 1 coin instead of the marked price</Text></Item>
+			</Section>
+		</Setup>
 		<InGame>
 			<Name>In Game</Name>
 			<Section>
