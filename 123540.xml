@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<BGGID>123540</BGGID>
+	<Name>Tokaido</Name>
+	<Strings>
+		<Players_Capitalise>Players</Players_Capitalise>
+		<Players_Lower>players</Players_Lower>
+	</Strings>
+	<DisplayButtons>
+		<InGame>
+			<Name>In Game</Name>
+			<Section>
+				<Heading>Calligraphies</Heading>
+				<Item><Text>&lt;strong&gt;Contemplation&lt;/strong&gt;: 3 points per complete Panorama, 1 point per Cherry Tree</Text></Item>
+				<Item><Text>&lt;strong&gt;Fasting&lt;/strong&gt;: 3 points per uneaten Meal</Text></Item>
+				<Item><Text>&lt;strong&gt;Foresight&lt;/strong&gt;: 2 points per remaining coin</Text></Item>
+				<Item><Text>&lt;strong&gt;Nostalgia&lt;/strong&gt;: 2 points per Legendary Object, 1 point per Souvenir</Text></Item>
+				<Item><Text>&lt;strong&gt;Patience&lt;/strong&gt;: 6 points if last to arrive, 4 points if second-last, 2 points in all other cases</Text></Item>
+				<Item><Text>&lt;strong&gt;Perfection&lt;/strong&gt;: 2 points per Accomlishment, 1 point per Calligraphy card</Text></Item>
+			</Section>
+			<Section>
+				<Heading>Amulets</Heading>
+				<Item><Text>&lt;strong&gt;Devotion&lt;/strong&gt;: Give the Temple the coins spent on acquiring any kind of purchasable card</Text></Item>
+				<Item><Text>&lt;strong&gt;Fortune&lt;/strong&gt;: Roll the fortune die, before moving, as if in a Gaming Room</Text></Item>
+				<Item><Text>&lt;strong&gt;Friendship&lt;/strong&gt;: Stop on a single space that is occupied by another Traveler as if it was a double space</Text></Item>
+				<Item><Text>&lt;strong&gt;Health&lt;/strong&gt;: Select both options for the space you land on (in the order of your choice)</Text></Item>
+				<Item><Text>&lt;strong&gt;Hospitality&lt;/strong&gt;: Take your Meal card for free when stopping at an Inn</Text></Item>
+				<Item><Text>&lt;strong&gt;Vitality&lt;/strong&gt;: Play again while in the lead position</Text></Item>
+			</Section>
+		</InGame>
+	</DisplayButtons>
+</Game>
