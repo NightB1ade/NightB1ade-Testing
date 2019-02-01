@@ -128,18 +128,20 @@ table#Parameters {
 	height: 50px;
 	padding: 5px 10px;
 	width: 250px;
-	vertical-align: middle;
 } /* REMOVE HARD CODING */
+	#GamesList div span {
+		display: inline-block;
+		vertical-align: middle;
+	}
 	#GamesList div span.thumbnail {
+		text-align: center;
 		height: 50px;
 		margin: 0 10px 0 0;
 		width: 50px;
 } /* REMOVE HARD CODING */
 		#GamesList div span.thumbnail img {
-			align: left;
 			max-height: 50px;
 			max-width: 50px;
-			vertical-align: middle;
 		}
 	/* } */ /* REMOVE HARD CODING */
 /* } */ /* REMOVE HARD CODING */
