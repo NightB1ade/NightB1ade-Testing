@@ -6,11 +6,6 @@
 		<Players_Capitalise>Firefighters</Players_Capitalise>
 		<Players_Lower>firefighters</Players_Lower>
 	</Strings>
-	<Expansions>
-		<Expansion name="Expansion1" default="true">
-			<Name>Expansion1</Name>
-		</Expansion>
-	</Expansions>
 	<Players>
 		<Base min="2" max="6" default="4"></Base>
 	</Players>
