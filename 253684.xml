@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<BGGID>253684</BGGID>
+	<Name>Spring Meadow</Name>
+	<Strings>
+		<Players_Capitalise>Players</Players_Capitalise>
+		<Players_Lower>players</Players_Lower>
+	</Strings>
+	<Players>
+		<Base min="2" max="4" default="3"></Base>
+	</Players>
+	<DisplayButtons>
+		<Setup>
+			<Name>Setup</Name>
+			<Section>
+				<Item>
+					<Text>&lt;strong&gt;Player 2&lt;/strong&gt;: ${Players} space Rock tile</Text>
+					<Players number="2">2</Players>
+					<Players number="3">1</Players>
+					<Players number="4">1</Players>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Player 3&lt;/strong&gt;: ${Players} space Rock tile</Text>
+					<Players number="3">3</Players>
+					<Players number="4">2</Players>
+					<Display>
+						<Players number="2" value="false"></Players>
+						<Players number="3" value="true"></Players>
+						<Players number="4" value="true"></Players>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Player 4&lt;/strong&gt;: 3 space Rock tile</Text>
+					<Display>
+						<Players number="2" value="false"></Players>
+						<Players number="3" value="false"></Players>
+						<Players number="4" value="true"></Players>
+					</Display>
+				</Item>
+			</Section>
+			<Section>
+				<Heading>Reminder</Heading>
+				<Item><Text>&lt;strong&gt;Rock Tile&lt;/strong&gt;: For 2/3/4/5+ adjacent holes, take a 1/2/3/4 Rock tile.  You may choose to take one smaller Rock tile</Text></Item>
+			</Section>
+		</Setup>
+	</DisplayButtons>
+</Game>
