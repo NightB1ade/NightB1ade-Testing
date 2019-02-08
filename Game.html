@@ -66,7 +66,8 @@ function myStringInterpolation(tpl,args) {
 
 
 
-function Display(display) {
+function Display() {
+	var display = $("input[name='DisplayRadio']:checked").attr("value");
 	var displaygamedata;
 	var html = "";
 	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
@@ -92,43 +93,7 @@ function Display(display) {
 	}
 
 	// Heading 1
-	html += "<h1>"
-		+ $(displaygamedata).children("Name").text()
-		+ (
-			(
-				$(displaygamedata).find("Item Players").length != 0
-				&& NoPlayers != null
-			)
-			? " - "
-				+ NoPlayers
-				+ " "
-				+ $(gamedata).find("Strings Players_Capitalise").text()
-			: ""
-		)
-		+ "</h1>";
-
-	// Subheading
-	if ($(displaygamedata).find("Expansion").length != 0) {
-		if (Expansions_Checked_Code == "") {
-			html += "<h3>Base Game</h3>";
-		} else {
-			html += "<h3>";
-			if (Expansions_Checked_Code.length == 1) {
-				html += "Expansion: "
-			} else {
-				html += "Expansions: "
-			}
-			html += Expansions_Checked_Name.join(", ")
-				+ "</h3>";
-		}
-	}
-
-	if (
-		$(displaygamedata).find("Difficulty").length != 0
-		&& Difficulty != ""
-	) {
-		html += "<h3>Difficulty: " + Difficulty + "</h3>";
-	}
+	html += "<h1>" + $(displaygamedata).children("Name").text() + "</h1>";
 
 	// Add information
 	$(displaygamedata).find("Section").each(function(){
@@ -287,21 +252,26 @@ $(document).ready(function(){
 
 			$("#Parameters tr[name='ExpansionButtons']").html(html_ExpansionCheckboxes);
 
-			//Add Relevant Display Buttons
+			//Add Relevant Display Buttons (as Radio)
 			$(gamedata).find("DisplayButtons").children().each(function(){
-				html_DisplayButtons += " <button onclick=\"Display('" + this.nodeName + "')\">"
-					+ $(this).children("Name").text()
-					+ "</button>";
+				html_DisplayButtons += " <label for='DisplayRadio_" + this.nodeName + "'>" + $(this).children("Name").text() + "</label>"
+					+ " <input type='radio' name='DisplayRadio' id='DisplayRadio_" + this.nodeName + "' value='" + this.nodeName + "'>";
 			});
 
 			if (html_DisplayButtons != "") {
 				html_DisplayButtons = "<td colspan='2'>" + html_DisplayButtons + "</td>";
 			}
 
+			// Bind jQuery
 			$("#Parameters tr[name='DisplayButtons']").html(html_DisplayButtons);
 			$("button").button();
-			$("input").checkboxradio({icon:false});
+			$("input[type=checkbox], input[type=radio]").checkboxradio({icon:false});
 			$(".spinner").spinner();
+
+			// Bind onChange
+			$("input[name='NoPlayers']").on("spinstop",Display);
+			$("input[name='DisplayRadio'], input.Checkbox_Expansion").on("change",Display);
+			$("select[name='Difficulty']").on("selectmenuchange",Display);
 		}
 	);
 });
