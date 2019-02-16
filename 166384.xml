@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<BGGID>166384</BGGID>
+	<Name>Spyfall</Name>
+	<Strings>
+		<Players_Capitalise>Players</Players_Capitalise>
+		<Players_Lower>players</Players_Lower>
+	</Strings>
+	<DisplayButtons>
+		<InGame>
+			<Name>In Game</Name>
+			<Section>
+				<Heading>Locations</Heading>
+				<Item><Text>Airplane</Text></Item>
+				<Item><Text>Amusement Park</Text></Item>
+				<Item><Text>Bank</Text></Item>
+				<Item><Text>Beach</Text></Item>
+				<Item><Text>Carnival</Text></Item>
+				<Item><Text>Casino</Text></Item>
+				<Item><Text>Circus Tent</Text></Item>
+				<Item><Text>Corporate Party</Text></Item>
+				<Item><Text>Crusader Army</Text></Item>
+				<Item><Text>Day Spa</Text></Item>
+				<Item><Text>Embassy</Text></Item>
+				<Item><Text>Hospital</Text></Item>
+				<Item><Text>Hotel</Text></Item>
+				<Item><Text>Military Base</Text></Item>
+				<Item><Text>Movie Studio</Text></Item>
+				<Item><Text>Nightclub</Text></Item>
+				<Item><Text>Ocean Liner</Text></Item>
+				<Item><Text>Passenger Train</Text></Item>
+				<Item><Text>Pirate Ship</Text></Item>
+				<Item><Text>Polar Station</Text></Item>
+				<Item><Text>Police Station</Text></Item>
+				<Item><Text>Restaurant</Text></Item>
+				<Item><Text>School</Text></Item>
+				<Item><Text>Service Station (Mechanic’s)</Text></Item>
+				<Item><Text>Space Station</Text></Item>
+				<Item><Text>Submarine</Text></Item>
+				<Item><Text>Supermarket</Text></Item>
+				<Item><Text>Theatre</Text></Item>
+				<Item><Text>University</Text></Item>
+				<Item><Text>Zoo</Text></Item>
+				<Item><Text>&lt;em&gt;Spy School&lt;/em&gt;</Text></Item>
+			</Section>
+		</InGame>
+	</DisplayButtons>
+</Game>

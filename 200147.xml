@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<BGGID>200147</BGGID>
+	<Name>Kanagawa</Name>
+	<Strings>
+		<Players_Capitalise>Players</Players_Capitalise>
+		<Players_Lower>players</Players_Lower>
+	</Strings>
+	<DisplayButtons>
+		<EndGame>
+			<Name>End Game</Name>
+			<Section>
+				<Heading>Scoring</Heading>
+				<Item><Text>&lt;strong&gt;1 point per Lesson Card in your Print&lt;/strong&gt;: Including Starting tile</Text></Item>
+				<Item><Text>&lt;strong&gt;1 point per longest sequence of identical seasons&lt;/strong&gt;: Including Starting tile, Storm tokens are wild</Text></Item>
+				<Item><Text>&lt;strong&gt;Points on Lesson Cards&lt;/strong&gt;: In both Print and Studio</Text></Item>
+				<Item><Text>&lt;strong&gt;Points on Diploma Tiles&lt;/strong&gt;</Text></Item>
+				<Item><Text>&lt;strong&gt;2 points for Grand Master pawn&lt;/strong&gt;</Text></Item>
+			</Section>
+		</EndGame>
+	</DisplayButtons>
+</Game>

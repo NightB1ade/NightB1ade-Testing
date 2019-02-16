@@ -6,14 +6,14 @@
 		<Players_Capitalise>Players</Players_Capitalise>
 		<Players_Lower>players</Players_Lower>
 	</Strings>
-	<Players>
-		<Base min="2" max="4" default="3"></Base>
-	</Players>
 	<Expansions>
 		<Expansion name="Chibis" default="true">
 			<Name>Chibis</Name>
 		</Expansion>
 	</Expansions>
+	<Players>
+		<Base min="2" max="4" default="3"></Base>
+	</Players>
 	<DisplayButtons>
 		<Setup>
 			<Name>Setup</Name>

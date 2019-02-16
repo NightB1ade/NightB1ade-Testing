@@ -6,11 +6,20 @@
 	<Game id="100901">
 		<Name>Flash Point</Name>
 	</Game>
+	<Game id="37046">
+		<Name>Ghost Stories</Name>
+	</Game>
+	<Game id="200147">
+		<Name>Kanagawa</Name>
+	</Game>
 	<Game id="162886">
 		<Name>Spirit Island</Name>
 	</Game>
 	<Game id="253684">
 		<Name>Spring Meadow</Name>
+	</Game>
+	<Game id="166384">
+		<Name>Spyfall</Name>
 	</Game>
 	<Game id="70919">
 		<Name>Takenoko</Name>

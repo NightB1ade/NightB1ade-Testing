@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<BGGID>37046</BGGID>
+	<Name>Ghost Stories</Name>
+	<Strings>
+		<Players_Capitalise>Taoist</Players_Capitalise>
+		<Players_Lower>Taoist</Players_Lower>
+	</Strings>
+	<Expansions>
+		<Expansion name="WhiteMoon" default="true">
+			<Name>White Moon</Name>
+		</Expansion>
+	</Expansions>
+	<Players>
+		<Base min="1" max="4" default="4"></Base>
+	</Players>
+	<Difficulty>
+		<Initiation>Initiation</Initiation>
+		<Normal default="true">Normal</Normal>
+		<Nightmare>Nightmare</Nightmare>
+		<Hell>Hell</Hell>
+	</Difficulty>
+	<DisplayButtons>
+		<Setup>
+			<Name>Setup</Name>
+			<Section>
+				<Heading>Ghost Deck</Heading>
+				<Item>
+					<Text>&lt;strong&gt;Shuffle in new Ghosts&lt;/strong&gt;: Add the 10 new Ghost cards and shuffle</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="WhiteMoon" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Remove extra cards (expansion)&lt;/strong&gt;: Remove 10 Ghost cards and return to box</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="WhiteMoon" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Remove extra cards (players)&lt;/strong&gt;: Remove ${Players} Ghost cards and return to box</Text>
+					<Players number="1">15</Players>
+					<Players number="2">10</Players>
+					<Players number="3">5</Players>
+					<Display>
+						<Players number="1" value="true"></Players>
+						<Players number="2" value="true"></Players>
+						<Players number="3" value="true"></Players>
+						<Players number="4" value="false"></Players>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Add 1 Wu-Feng Incarnation&lt;/strong&gt;: 10 Ghost cards, 1 Wu-Feng Incarnation repeated until no more Wu-Feng cards, place rest of the Ghosts on the top</Text>
+					<Display>
+						<Difficulty name="Initiation" value="true"></Difficulty>
+						<Difficulty name="Normal" value="true"></Difficulty>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Add ${Players} Wu-Feng Incarnations&lt;/strong&gt;: 10 Ghost cards, 1 Wu-Feng Incarnation repeated until no more Wu-Feng cards, place rest of the Ghosts on the top</Text>
+					<Players number="1">3</Players>
+					<Players number="2">3</Players>
+					<Players number="3">4</Players>
+					<Players number="4">4</Players>
+					<Display>
+						<Difficulty name="Nightmare" value="true"></Difficulty>
+						<Difficulty name="Hell" value="true"></Difficulty>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Final Ghost Deck&lt;/strong&gt;: ${Players} Ghost cards, 1 incarnation, 10 Ghost cards</Text>
+					<Players number="1">30</Players>
+					<Players number="2">35</Players>
+					<Players number="3">40</Players>
+					<Players number="4">45</Players>
+					<Display>
+						<Difficulty name="Initiation" value="true"></Difficulty>
+						<Difficulty name="Normal" value="true"></Difficulty>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Final Ghost Deck&lt;/strong&gt;: ${Players}, 1 incarnation, 10 Ghost cards, 1 incarnation, 10 Ghost cards, 1 incarnation, 10 Ghost cards</Text>
+					<Players number="1">10 Ghost cards</Players>
+					<Players number="2">15 Ghost cards</Players>
+					<Players number="3">10 Ghost cards, 1 incarnation, 10 Ghost cards</Players>
+					<Players number="4">15 Ghost cards, 1 incarnation, 10 Ghost cards</Players>
+					<Display>
+						<Difficulty name="Nightmare" value="true"></Difficulty>
+						<Difficulty name="Hell" value="true"></Difficulty>
+					</Display>
+				</Item>
+			</Section>
+			<Section>
+				<Heading>Taoists</Heading>
+				<Item>
+					<Text>&lt;strong&gt;Tao Tokens&lt;/strong&gt;: 1 of EACH Taoist Colour${Difficulty}</Text>
+					<Difficulty name="Initiation"> and 1 Black Tao Token</Difficulty>
+					<Display>
+						<Players number="1" value="true"></Players>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Tao Tokens&lt;/strong&gt;: 1 of their Taoist Colour${Difficulty}</Text>
+					<Difficulty name="Initiation"> and 1 Black Tao Token</Difficulty>
+					<Display>
+						<Players number="1" value="false"></Players>
+						<Players number="2" value="true"></Players>
+						<Players number="3" value="true"></Players>
+						<Players number="4" value="true"></Players>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Qi Tokens&lt;/strong&gt;: ${Difficulty} Qi tokens</Text>
+					<Difficulty name="Initiation">4</Difficulty>
+					<Difficulty name="Normal">3</Difficulty>
+					<Difficulty name="Nightmare">3</Difficulty>
+					<Difficulty name="Hell">3</Difficulty>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Yin-Yang Token&lt;/strong&gt;: ${Difficulty}</Text>
+					<Difficulty name="Initiation">Each Taoist takes their Yin-Yang Token</Difficulty>
+					<Difficulty name="Normal">Each Taoist takes their Yin-Yang Token</Difficulty>
+					<Difficulty name="Nightmare">Each Taoist takes their Yin-Yang Token</Difficulty>
+					<Difficulty name="Hell">NO Yin-Yang Token</Difficulty>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Neutral Power Token&lt;/strong&gt;: ${Players} Neutral Power Tokens</Text>
+					<Players number="1">3</Players>
+					<Players number="2">1</Players>
+					<Players number="3">1</Players>
+					<Display>
+						<Players number="1" value="true"></Players>
+						<Players number="2" value="true"></Players>
+						<Players number="3" value="true"></Players>
+						<Players number="4" value="false"></Players>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Note&lt;/strong&gt;: Player boards have to be opposite</Text>
+					<Display>
+						<Players number="2" value="true"></Players>
+					</Display>
+				</Item>
+			</Section>
+			<Section>
+				<Heading>Reminder</Heading>
+				<Item>
+					<Text>&lt;strong&gt;Su-Ling&lt;/strong&gt;: She moves after a) A villager is killed, b) A Curse die is rolled, or c) A Village tile is haunted</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="WhiteMoon" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Haunting&lt;/strong&gt;: If there are villagers on a tile to be haunted, they all die, but the tile does not become haunted</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="WhiteMoon" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Kung-Fu School&lt;/strong&gt;: SOLITARY exorcism on a) All ghosts of the colour of his board, or b) All black ghosts.  Support action, no Tao token sharing, own can be used.  Exit abilities do not apply, can spend a neutral power token to also target a neutral board’s colour</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="WhiteMoon" value="true"></Expansion>
+					</Display>
+				</Item>
+			</Section>
+		</Setup>
+		<TurnOrder>
+			<Name>Turn Order</Name>
+			<Section>
+				<Heading>Yin Phase</Heading>
+				<Item><Text>&lt;strong&gt;Ghost Abilities&lt;/strong&gt;: Haunter and Tormentor abilities, clockwise if order matters</Text></Item>
+				<Item>
+					<Text>Haunters also push a villager</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="WhiteMoon" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item><Text>&lt;strong&gt;New Ghost or Lose Qi&lt;/strong&gt;: If the player board is not full, then draw a new ghost, otherwise lose 1 Qi</Text></Item>
+			</Section>
+			<Section>
+				<Heading>Yang Phase</Heading>
+				<Item><Text>&lt;strong&gt;Enfeeblement Mantra&lt;/strong&gt;: If Yellow’s power is active</Text></Item>
+				<Item><Text>&lt;strong&gt;Move&lt;/strong&gt;: Optional</Text></Item>
+				<Item>
+					<Text>&lt;strong&gt;Exorcise or Village Tile&lt;strong&gt;</Text>
+					<Display>
+						<Base value="true"></Base>
+						<Expansion name="WhiteMoon" value="false"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Exorcise or Village Tile or Save Villager&lt;/strong&gt;</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="WhiteMoon" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Place Buddha(s), Take Neutral Power Tokens&lt;/strong&gt;: Optional</Text>
+					<Display>
+						<Base value="true"></Base>
+						<Expansion name="WhiteMoon" value="false"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Move Su-Ling, Place Buddha(s), Place Crystal, Take Neutral Power Tokens&lt;/strong&gt;: Optional</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="WhiteMoon" value="true"></Expansion>
+					</Display>
+				</Item>
+				<Item>
+					<Text>&lt;strong&gt;Mystic Barrier&lt;/strong&gt;: Starting with board left of active player.  Either return a Moon Crystal to the reserver to save the villager at the top of the stack with the Portal.  If no stack, then any villager.  Or Roll 4 Tao Dice supplementing with Moon Crystals on pillars, Circle of Prayer and Enfeeblement Mantra count.  No exit abilities for the ghosts</Text>
+					<Display>
+						<Base value="false"></Base>
+						<Expansion name="WhiteMoon" value="true"></Expansion>
+					</Display>
+				</Item>
+			</Section>
+		</TurnOrder>
+	</DisplayButtons>
+</Game>
