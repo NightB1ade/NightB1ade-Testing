@@ -14,12 +14,12 @@
 	<Players>
 		<Base min="1" max="4" default="4"></Base>
 	</Players>
-	<Difficulty>
-		<Initiation>Initiation</Initiation>
-		<Normal default="true">Normal</Normal>
-		<Nightmare>Nightmare</Nightmare>
-		<Hell>Hell</Hell>
-	</Difficulty>
+	<Difficulties>
+		<Difficulty name="Initiation">Initiation</Difficulty>
+		<Difficulty name="Normal" default="true">Normal</Difficulty>
+		<Difficulty name="Nightmare">Nightmare</Difficulty>
+		<Difficulty name="Hell">Hell</Difficulty>
+	</Difficulties>
 	<DisplayButtons>
 		<Setup>
 			<Name>Setup</Name>

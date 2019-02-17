@@ -9,11 +9,11 @@
 	<Players>
 		<Base min="2" max="6" default="4"></Base>
 	</Players>
-	<Difficulty>
-		<Recruit>Recruit</Recruit>
-		<Veteran default="true">Veteran</Veteran>
-		<Heroic>Heroic</Heroic>
-	</Difficulty>
+	<Difficulties>
+		<Difficulty name="Recruit">Recruit</Difficulty>
+		<Difficulty name="Veteran" default="true">Veteran</Difficulty>
+		<Difficulty name="Heroic">Heroic</Difficulty>
+	</Difficulties>
 	<DisplayButtons>
 		<Setup>
 			<Name>Setup</Name>

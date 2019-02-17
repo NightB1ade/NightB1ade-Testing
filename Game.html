@@ -71,7 +71,7 @@ function Display() {
 	var displaygamedata;
 	var html = "";
 	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
-	var Difficulty = $("select[name='Difficulty'] option:selected").text();
+	var Difficulty = $("select[name='Difficulty'] option:selected").attr("name");
 	var Expansions_Checked_Code = $(".Checkbox_Expansion:checked").map(function(){
 		return $(this).attr("name");
 	}).get();
@@ -211,12 +211,14 @@ $(document).ready(function(){
 			}
 
 			//Unhide difficulty chooser if appropriate
-			if ($(gamedata).children("Difficulty").length != 0) {
+			if ($(gamedata).children("Difficulties").length != 0) {
 				var html_Difficulty = "<td>Difficulty</td>"
 					+ "<td><select name='Difficulty'>";
 
-				$(gamedata).children("Difficulty").children().each(function(){
-					html_Difficulty += "<option"
+				$(gamedata).children("Difficulties").children().each(function(){
+					html_Difficulty += "<option name='"
+						+ $(this).attr("name")
+						+ "'"
 						+ (($(this).attr("default") == "true") ? " selected='selected'" : "")
 						+ ">"
 						+ $(this).text()
