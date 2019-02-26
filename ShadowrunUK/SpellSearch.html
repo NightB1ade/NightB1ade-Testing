@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="stylesheet" href="https://nightb1ade.github.io/Shadowrun-UK/assets/css/style.css?v=5941cbfa83df2350ed5a2a59d8994fcff4d6c37b">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css">
+
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+
+	<script
+		src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+		integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+		crossorigin="anonymous"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<title>Spell Search - Shadowrun UK</title>
+</head>
+
+
+<body>
+<section id="title">
+	<h1>Spell Search</h1>
+	<p><a href="/Shadowrun-UK/">Shadowrun UK</a></p>
+</section>
+
+
+<section id="content">
+<table>
+<tr>
+	<td>Name</td>
+	<td><input type="text" name="SpellName" /></td>
+</tr>
+<tr>
+	<td colspan="2">
+		<button type="button" onclick="SearchSpells()">Search</button>
+	</td>
+</tr>
+</table>
+
+<script>
+function SearchSpells() {
+	var SpellName = $("input[name=SpellName]").val();
+	alert(SpellName);
+}
+
+
+$(document).ready(function(){
+	$("button").button();
+	$('input[type=text]').addClass("ui-widget ui-widget-content ui-corner-all")
+});
+</script>
+
+
+</section>
+
+</body>
+
+</html>
