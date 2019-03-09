@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<BGGID>191189</BGGID>
+	<Name>Aeon's End</Name>
+	<Strings>
+		<Players_Capitalise>Breach Mages</Players_Capitalise>
+		<Players_Lower>breach mages</Players_Lower>
+	</Strings>
+	<Players>
+		<Base min="2" max="4" default="3"></Base>
+	</Players>
+	<DisplayButtons>
+		<PlayOrderDeck>
+			<Script type="RandomHiddenList">
+				<String name="RandomItemName">Card</String>
+			</Script>
+			<Name>Play Order Deck</Name>
+			<Item>
+				<Text>Mage 1</Text>
+				<Default>
+					<Players number="2" value="true"></Players>
+					<Players number="3" value="true"></Players>
+					<Players number="4" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Mage 1</Text>
+				<Default>
+					<Players number="2" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Mage 2</Text>
+				<Default>
+					<Players number="2" value="true"></Players>
+					<Players number="3" value="true"></Players>
+					<Players number="4" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Mage 2</Text>
+				<Default>
+					<Players number="2" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Mage 3</Text>
+				<Default>
+					<Players number="3" value="true"></Players>
+					<Players number="4" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Mage 4</Text>
+				<Default>
+					<Players number="4" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Mage - Wild</Text>
+				<Default>
+					<Players number="3" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Nemesis A</Text>
+				<Default>
+					<Players number="2" value="true"></Players>
+					<Players number="3" value="true"></Players>
+					<Players number="4" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Nemesis B</Text>
+				<Default>
+					<Players number="2" value="true"></Players>
+					<Players number="3" value="true"></Players>
+					<Players number="4" value="true"></Players>
+				</Default>
+			</Item>
+		</PlayOrderDeck>
+	</DisplayButtons>
+</Game>

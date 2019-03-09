@@ -92,6 +92,16 @@ function Display() {
 		return
 	}
 
+	//Run Scripts if present and return
+	if ($(displaygamedata).find("Script").length != 0) {
+		$(displaygamedata).find("Script").each(function(){
+			if ($(this).attr("type") == "RandomHiddenList") {
+				$.getScript("RandomHiddenList.js");
+			}
+		});
+		return
+	}
+
 	// Heading 1
 	html += "<h1>" + $(displaygamedata).children("Name").text() + "</h1>";
 
