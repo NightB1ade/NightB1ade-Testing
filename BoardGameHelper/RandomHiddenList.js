@@ -30,11 +30,11 @@ function RandomHiddenList_Start() {
 			+ " <label for='RandomItemName" + i + "_Yes'>Yes</label>"
 			+ " <input type='radio' name='RandomItemName" + i + "' id='RandomItemName" + i + "_Yes' value='1'"
 			+ " label='" + $(this).children("Text").text() + "'"
-			+ (($(this).find("Default Players[number=" + NoPlayers + "]").attr("value") == "true") ? "checked" : "")
+			+ (($(this).find("Default Players").length != 0 && $(this).find("Default Players[number=" + NoPlayers + "]").attr("value") == "true") ? "checked" : "")
 			+ ">"
 			+ " <label for='RandomItemName" + i + "_No'>No</label>"
 			+ " <input type='radio' name='RandomItemName" + i + "' id='RandomItemName" + i + "_No'"
-			+ (($(this).find("Default Players[number=" + NoPlayers + "]").attr("value") == "true") ? "" : "checked")
+			+ (($(this).find("Default Players").length != 0 && $(this).find("Default Players[number=" + NoPlayers + "]").attr("value") == "true") ? "" : "checked")
 			+ ">"
 			+ "</td>"
 			+ "</tr>";

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<BGGID>124708</BGGID>
+	<Name>Mice and Mystics</Name>
+	<DisplayButtons>
+		<PlayOrderDeck>
+			<Script type="RandomHiddenList">
+				<String name="RandomItemName">Card</String>
+			</Script>
+			<Name>Play Order Deck</Name>
+			<Item><Text>Collin</Text></Item>
+			<Item><Text>Filch</Text></Item>
+			<Item><Text>Lily</Text></Item>
+			<Item><Text>Maginos</Text></Item>
+			<Item><Text>Nez</Text></Item>
+			<Item><Text>Tilda</Text></Item>
+			<Item><Text>Enemy 1</Text></Item>
+			<Item><Text>Enemy 2</Text></Item>
+			<Item><Text>Enemy 3</Text></Item>
+		</PlayOrderDeck>
+	</DisplayButtons>
+</Game>
