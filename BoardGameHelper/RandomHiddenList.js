@@ -49,7 +49,7 @@ function RandomHiddenList_Start() {
 	html += "<h2>Randomise</h2>";
 
 	//Randomise Button
-	html += "<p><button onclick='Randomise()'>Randomise</button></p>";
+	html += "<p><button onclick='RandomiseHiddenList()'>Randomise</button></p>";
 
 	//Deck Table Start
 	html += "<table id='DeckTable'>"
@@ -76,7 +76,7 @@ function RandomHiddenList_Start() {
 
 
 
-function Randomise() {
+function RandomiseHiddenList() {
 	var html = "";
 	var i = 0;
 	var array = [];
