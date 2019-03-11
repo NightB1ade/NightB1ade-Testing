@@ -25,11 +25,11 @@ function RandomHiddenList_Start() {
 	$(displaygamedata).find("Item").each(function(){
 		i += 1;
 		html += "<tr>"
-			+ "<td>" + $(this).children("Text").text() + "</td>"
+			+ "<td>" + $(this).children("Name").text() + "</td>"
 			+ "<td>"
 			+ " <label for='RandomItemName" + i + "_Yes'>Yes</label>"
 			+ " <input type='radio' name='RandomItemName" + i + "' id='RandomItemName" + i + "_Yes' value='1'"
-			+ " label='" + $(this).children("Text").text() + "'"
+			+ " label='" + $(this).children("Name").text() + "'"
 			+ (($(this).find("Default Players").length != 0 && $(this).find("Default Players[number=" + NoPlayers + "]").attr("value") == "true") ? "checked" : "")
 			+ ">"
 			+ " <label for='RandomItemName" + i + "_No'>No</label>"
