@@ -1,3 +1,20 @@
+function getRandomIntArray(min,max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	var array = [];
+
+	for (i = min ; i <= max ; i += 1) {
+		array.push(i);
+	}
+
+	array = ShuffleArray(array);
+
+	return array
+}
+
+
+
+
 function getRandomInteger(min,max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
