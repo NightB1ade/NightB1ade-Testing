@@ -16,7 +16,7 @@
 			</Script>
 			<Name>Play Order Deck</Name>
 			<Item>
-				<Name>Mage 1</Name>
+				<Text>Mage 1</Text>
 				<Default>
 					<Players number="2" value="true"></Players>
 					<Players number="3" value="true"></Players>
@@ -24,46 +24,13 @@
 				</Default>
 			</Item>
 			<Item>
-				<Name>Mage 1</Name>
+				<Text>Mage 1</Text>
 				<Default>
 					<Players number="2" value="true"></Players>
 				</Default>
 			</Item>
 			<Item>
-				<Name>Mage 2</Name>
-				<Default>
-					<Players number="2" value="true"></Players>
-					<Players number="3" value="true"></Players>
-					<Players number="4" value="true"></Players>
-				</Default>
-			</Item>
-			<Item>
-				<Name>Mage 2</Name>
-				<Default>
-					<Players number="2" value="true"></Players>
-				</Default>
-			</Item>
-			<Item>
-				<Name>Mage 3</Name>
-				<Default>
-					<Players number="3" value="true"></Players>
-					<Players number="4" value="true"></Players>
-				</Default>
-			</Item>
-			<Item>
-				<Name>Mage 4</Name>
-				<Default>
-					<Players number="4" value="true"></Players>
-				</Default>
-			</Item>
-			<Item>
-				<Name>Mage - Wild</Name>
-				<Default>
-					<Players number="3" value="true"></Players>
-				</Default>
-			</Item>
-			<Item>
-				<Name>Nemesis A</Name>
+				<Text>Mage 2</Text>
 				<Default>
 					<Players number="2" value="true"></Players>
 					<Players number="3" value="true"></Players>
@@ -71,7 +38,40 @@
 				</Default>
 			</Item>
 			<Item>
-				<Name>Nemesis B</Name>
+				<Text>Mage 2</Text>
+				<Default>
+					<Players number="2" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Mage 3</Text>
+				<Default>
+					<Players number="3" value="true"></Players>
+					<Players number="4" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Mage 4</Text>
+				<Default>
+					<Players number="4" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Mage - Wild</Text>
+				<Default>
+					<Players number="3" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Nemesis A</Text>
+				<Default>
+					<Players number="2" value="true"></Players>
+					<Players number="3" value="true"></Players>
+					<Players number="4" value="true"></Players>
+				</Default>
+			</Item>
+			<Item>
+				<Text>Nemesis B</Text>
 				<Default>
 					<Players number="2" value="true"></Players>
 					<Players number="3" value="true"></Players>
