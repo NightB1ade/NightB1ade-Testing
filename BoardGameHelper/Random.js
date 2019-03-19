@@ -1,24 +1,19 @@
-function getRandomIntArray(min,max) {
+function getRandomInteger(min,max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
-	var array = [];
-
-	for (i = min ; i <= max ; i += 1) {
-		array.push(i);
-	}
-
-	array = ShuffleArray(array);
-
-	return array
+	return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 
 
 
-function getRandomInteger(min,max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1)) + min
+function getRandomIntegerExcludingOne(min,max,excluding) {
+	var output = getRandomInteger(min,max - 1);
+	if (output == excluding) {
+		return max
+	} else {
+		return output
+	}
 }
 
 
@@ -39,6 +34,23 @@ function ShuffleArray(array) {
 		array[i] = array[j]
 		array[j] = temp
 	}
+
+	return array
+}
+
+
+
+
+function getRandomIntArray(min,max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	var array = [];
+
+	for (i = min ; i <= max ; i += 1) {
+		array.push(i);
+	}
+
+	array = ShuffleArray(array);
 
 	return array
 }

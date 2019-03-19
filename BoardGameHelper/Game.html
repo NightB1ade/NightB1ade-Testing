@@ -51,6 +51,10 @@
 
 <script>
 var gamedata;
+var displaygamedata;
+var Expansions_Checked_Code;
+var Expansions_Checked_Name;
+
 var url = new URL(window.location.href);
 var BGGID = url.searchParams.get("bggid");
 
@@ -68,14 +72,15 @@ function myStringInterpolation(tpl,args) {
 
 function Display() {
 	var display = $("input[name='DisplayRadio']:checked").attr("value");
-	var displaygamedata;
 	var html = "";
 	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
 	var Difficulty = $("select[name='Difficulty'] option:selected").attr("name");
-	var Expansions_Checked_Code = $(".Checkbox_Expansion:checked").map(function(){
+
+	Expansions_Checked_Code = $(".Checkbox_Expansion:checked").map(function(){
 		return $(this).attr("name");
 	}).get();
-	var Expansions_Checked_Name = $(".Checkbox_Expansion:checked").map(function(){
+
+	Expansions_Checked_Name = $(".Checkbox_Expansion:checked").map(function(){
 		return $(this).attr("DisplayName");
 	}).get();
 
@@ -97,6 +102,10 @@ function Display() {
 		$(displaygamedata).find("Script").each(function(){
 			if ($(this).attr("type") == "RandomHiddenList") {
 				$.getScript("RandomHiddenList.js");
+			}
+
+			if ($(this).attr("type") == "SetupRandomiser") {
+				$.getScript("SetupRandomiser.js");
 			}
 		});
 		return

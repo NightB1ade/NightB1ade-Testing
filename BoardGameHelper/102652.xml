@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<BGGID>102652</BGGID>
+	<Name>Sentinels of the Multiverse</Name>
+	<Strings>
+		<Players_Capitalise>Heroes</Players_Capitalise>
+		<Players_Lower>heroes</Players_Lower>
+	</Strings>
+	<Expansions>
+		<Expansion name="InfernalRelics" default="true">
+			<Name>Infernal Relics</Name>
+		</Expansion>
+		<Expansion name="MiniExpansions" default="true">
+			<Name>Mini-Expansions</Name>
+		</Expansion>
+		<Expansion name="OblivAeon" default="true">
+			<Name>OblivAeon</Name>
+		</Expansion>
+		<Expansion name="RookCity" default="true">
+			<Name>Rook City</Name>
+		</Expansion>
+		<Expansion name="ShatteredTimelines" default="true">
+			<Name>Shattered Timelines</Name>
+		</Expansion>
+		<Expansion name="VillainsOfTheMultiverse" default="true">
+			<Name>Villains of the Multiverse</Name>
+		</Expansion>
+		<Expansion name="Vengeance" default="true">
+			<Name>Vengeance</Name>
+		</Expansion>
+		<Expansion name="WrathOfTheCosmos" default="true">
+			<Name>Wrath of the Cosmos</Name>
+		</Expansion>
+	</Expansions>
+	<Players>
+		<Base min="3" max="5" default="4"></Base>
+	</Players>
+	<DisplayButtons>
+		<SetupRandomiser>
+			<Script type="SetupRandomiser"></Script>
+			<Name>Setup Randomiser</Name>
+			<Section name="Heroes">
+				<Heading>Heroes</Heading>
+				<Randomise number="NoPlayers"></Randomise>
+				<Item>
+					<Text>Absolute Zero</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Freedom Five: Absolute Zero</Text></Variant>
+						<Variant><Text>Freedom Six: Absolute Zero (Elemental Wrath)</Text></Variant>
+						<Variant><Text>Termi-Nation: Absolute Zero</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Akash’Thriya</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Akash’Thriya: Spirit of the Void</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>The Argent Adept</Text>
+					<Available>
+						<Expansion name="InfernalRelics" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Dark Conductor Argent Adept</Text></Variant>
+						<Variant><Text>Prime Wardens: The Argent Adept</Text></Variant>
+						<Variant><Text>XTREME Prime Wardens: The Argent Adept</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Benchmark</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Benchmark: Supply and Demand</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Bunker</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>GI Bunker</Text></Variant>
+						<Variant><Text>Freedom Five: Bunker</Text></Variant>
+						<Variant><Text>Freedom Six: Bunker (Engine of War)</Text></Variant>
+						<Variant><Text>Termi-Nation: Bunker</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Captain Cosmic</Text>
+					<Available>
+						<Expansion name="WrathOfTheCosmos" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Captain Cosmic: Requital</Text></Variant>
+						<Variant><Text>Prime Wardens: Captain Cosmic</Text></Variant>
+						<Variant><Text>XTREME Prime Wardens: Captain Cosmic</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Chrono-Ranger</Text>
+					<Available>
+						<Expansion name="ShatteredTimelines" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Chrono-Ranger: The Best of Times</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>La Comodora</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>La Comodora: Curse of the Black Spot</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Dr. Medico</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Dr. Medico: Malpractice</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Expatriette</Text>
+					<Available>
+						<Expansion name="RookCity" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Dark Watch: Expatriette</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Fanatic</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Redeemer Fanatic</Text></Variant>
+						<Variant><Text>Prime Wardens: Fanatic</Text></Variant>
+						<Variant><Text>XTREME Prime Wardens: Fanatic</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Guise</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Santa Guise</Text></Variant>
+						<Variant><Text>Completionist Guise</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Haka</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>The Eternal Haka</Text></Variant>
+						<Variant><Text>Prime Wardens: Haka</Text></Variant>
+						<Variant><Text>XTREME Prime Wardens: Haka</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>The Harpy</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Dark Watch: The Harpy</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Idealist</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Super Sentai Idealist</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>K.N.Y.F.E.</Text>
+					<Available>
+						<Expansion name="Vengeance" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>K.N.Y.F.E.: Rogue Agent</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Legacy</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>America’s Newest Legacy</Text></Variant>
+						<Variant><Text>America’s Greatest Legacy</Text></Variant>
+						<Variant><Text>Freedom Five: Legacy</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Lifeline</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Lifeline: Bloodmage</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Luminary</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Ivana Ramonat: Luminary</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Mainstay</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Mainstay: Road Warrior</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Mr. Fixer</Text>
+					<Available>
+						<Expansion name="RookCity" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Dark Watch: Mr. Fixer</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>The Naturalist</Text>
+					<Available>
+						<Expansion name="Vengeance" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>The Hunted Naturalist</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Nightmist</Text>
+					<Available>
+						<Expansion name="InfernalRelics" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Dark Watch: Nightmist</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Omnitron-X</Text>
+					<Available>
+						<Expansion name="ShatteredTimelines" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Omnitron-U</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Parse</Text>
+					<Available>
+						<Expansion name="Vengeance" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Parse: Fugue State</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Ra</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Ra: Horus of the Two Horizons</Text></Variant>
+						<Variant><Text>Ra: The Setting Sun</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>The Scholar</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Scholar of the Infinite</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>The Sentinels</Text>
+					<Available>
+						<Expansion name="Vengeance" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>The Adamant Sentinels</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Setback</Text>
+					<Available>
+						<Expansion name="Vengeance" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Dark Watch: Setback</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Sky-Scraper</Text>
+					<Available>
+						<Expansion name="WrathOfTheCosmos" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Sky-Scraper: Extremist</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Stuntman</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Stuntman: Action Hero</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Tachyon</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Super Scientific Tachyon</Text></Variant>
+						<Variant><Text>Freedom Five: Tachyon</Text></Variant>
+						<Variant><Text>Freedom Six: Tachyon (Team Leader)</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Tempest</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Freedom Six: Tempest (Sacrifice)</Text></Variant>
+						<Variant><Text>Prime Wardens: Tempest</Text></Variant>
+						<Variant><Text>XTREME Prime Wardens: Tempest</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Unity</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Termni-Nation: Unity</Text></Variant>
+						<Variant><Text>Freedom Six: Unity (Golem)</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>The Visionary</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Dark Visionary</Text></Variant>
+						<Variant><Text>Visionary: Unleashed</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>The Wraith</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Rook City Wraith</Text></Variant>
+						<Variant><Text>Freedom Five: Wraith</Text></Variant>
+						<Variant><Text>Freedom Six: Wraith (Price of Freedom)</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Writhe</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Writhe: Cosmic Inventor</Text></Variant>
+					</Variants>
+				</Item>
+			</Section>
+			<Section name="Villain">
+				<Heading>Villain</Heading>
+				<Randomise number="1"></Randomise>
+				<Item>
+					<Text>Akash’Bhuta</Text>
+					<Available>
+						<Expansion name="InfernalRelics" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Ambuscade</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Apostate</Text>
+					<Available>
+						<Expansion name="InfernalRelics" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Baron Blade</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Mad Bomber Blade</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>La Capitan</Text>
+					<Available>
+						<Expansion name="ShatteredTimelines" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>The Chairman</Text>
+					<Available>
+						<Expansion name="RookCity" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Chokepoint</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Citizen Dawn</Text>
+				</Item>
+				<Item>
+					<Text>Deadline</Text>
+					<Available>
+						<Expansion name="WrathOfTheCosmos" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>The Dreamer</Text>
+					<Available>
+						<Expansion name="ShatteredTimelines" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>The Ennead</Text>
+					<Available>
+						<Expansion name="InfernalRelics" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Gloomweaver</Text>
+					<Available>
+						<Expansion name="InfernalRelics" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Skinwalker Gloomweaver</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Grand Warlord Voss</Text>
+				</Item>
+				<Item>
+					<Text>Infinitor</Text>
+					<Available>
+						<Expansion name="WrathOfTheCosmos" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Tormented Ally: Infinitor</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Iron Legacy</Text>
+					<Available>
+						<Expansion name="ShatteredTimelines" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Kaargra Warfang</Text>
+					<Available>
+						<Expansion name="WrathOfTheCosmos" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Kismet</Text>
+					<Available>
+						<Expansion name="ShatteredTimelines" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Trickster Kismet</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>The Matriarch</Text>
+					<Available>
+						<Expansion name="RookCity" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Miss Information</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>OblivAeon</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Omnitron</Text>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Cosmic Omnitron</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Plague Rat</Text>
+					<Available>
+						<Expansion name="RookCity" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Progeny</Text>
+					<Available>
+						<Expansion name="WrathOfTheCosmos" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Spite</Text>
+					<Available>
+						<Expansion name="RookCity" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant><Text>-</Text></Variant>
+						<Variant><Text>Spite: Agent of Gloom</Text></Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Vengeance Team</Text>
+					<Available>
+						<Expansion name="Vengeance" value="true"></Expansion>
+						<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+					</Available>
+					<Variants>
+						<Variant>
+							<Text>Baron Blade</Text>
+							<Available>
+								<Expansion name="Vengeance" value="true"></Expansion>
+							</Available>
+						</Variant>
+						<Variant>
+							<Text>Biomancer</Text>
+							<Available>
+								<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+							</Available>
+						</Variant>
+						<Variant>
+							<Text>Bugbear</Text>
+							<Available>
+								<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+							</Available>
+						</Variant>
+						<Variant>
+							<Text>Citizens Hammer and Anvil</Text>
+							<Available>
+								<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+							</Available>
+						</Variant>
+						<Variant>
+							<Text>Ermine</Text>
+							<Available>
+								<Expansion name="Vengeance" value="true"></Expansion>
+							</Available>
+						</Variant>
+						<Variant>
+							<Text>Friction</Text>
+							<Available>
+								<Expansion name="Vengeance" value="true"></Expansion>
+							</Available>
+						</Variant>
+						<Variant>
+							<Text>Fright Train</Text>
+							<Available>
+								<Expansion name="Vengeance" value="true"></Expansion>
+							</Available>
+						</Variant>
+						<Variant>
+							<Text>Greazer Clutch</Text>
+							<Available>
+								<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+							</Available>
+						</Variant>
+						<Variant>
+							<Text>Proletariat</Text>
+							<Available>
+								<Expansion name="Vengeance" value="true"></Expansion>
+							</Available>
+						</Variant>
+						<Variant>
+							<Text>Sergeant Steel</Text>
+							<Available>
+								<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+							</Available>
+						</Variant>
+					</Variants>
+				</Item>
+				<Item>
+					<Text>Wager Master</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+				</Item>
+			</Section>
+			<Section name="Environment">
+				<Heading>Environment</Heading>
+				<Randomise number="1"></Randomise>
+				<Item>
+					<Text>The Block</Text>
+					<Available>
+						<Expansion name="ShatteredTimelines" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>The Celestial Tribunal</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Champion Studios</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>The Court of Blood</Text>
+					<Available>
+						<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Dok'Thorath Capital</Text>
+					<Available>
+						<Expansion name="WrathOfTheCosmos" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Enclave of Endings</Text>
+					<Available>
+						<Expansion name="WrathOfTheCosmos" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>The Final Wasteland</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Fort Adamant</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Freedom Tower</Text>
+					<Available>
+						<Expansion name="Vengeance" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Insula Primalis</Text>
+				</Item>
+				<Item>
+					<Text>Madame Mittermeier’s Fantastical Festival of Conundrums &amp; Curiosities</Text>
+					<Available>
+						<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Maerynian Refuge</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Magmaria</Text>
+					<Available>
+						<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Megalopolis</Text>
+				</Item>
+				<Item>
+					<Text>Mobile Defence Platform</Text>
+					<Available>
+						<Expansion name="Vengeance" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Mordengrad</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Nexus of the Void</Text>
+					<Available>
+						<Expansion name="OblivAeon" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Omnitron IV</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Pike Industrial Complex</Text>
+					<Available>
+						<Expansion name="RookCity" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Ruins of Atlantis</Text>
+				</Item>
+				<Item>
+					<Text>Silver Gulch 1883</Text>
+					<Available>
+						<Expansion name="MiniExpansions" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Temple of Zhu Long</Text>
+					<Available>
+						<Expansion name="VillainsOfTheMultiverse" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Time Cataclysm</Text>
+					<Available>
+						<Expansion name="ShatteredTimelines" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Tomb of Anubis</Text>
+					<Available>
+						<Expansion name="InfernalRelics" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Wagner Mars Base</Text>
+				</Item>
+			</Section>
+		</SetupRandomiser>
+	</DisplayButtons>
+</Game>
