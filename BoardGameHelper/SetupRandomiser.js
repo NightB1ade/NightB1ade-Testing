@@ -180,7 +180,7 @@ function RerollOption() {
 
 	//Remove Existing Items
 	for(var i = AvailableOptionsArray.length - 1 ; i >= 0 ; i -= 1) {
-		if($.inArray(AvailableOptionsArray[i][0],OptionsArray) != -1) {
+		if($.inArray(AvailableOptionsArray[i],OptionsArray[0]) != -1) {
 			AvailableOptionsArray.splice(i,1);
 		}
 	}
