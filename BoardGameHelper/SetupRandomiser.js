@@ -31,7 +31,7 @@ function SetupRandomiser_Start() {
 function SetupRandomiser_Randomise(section) {
 	var RandomiseGameData = $(displaygamedata).find("Section[name=" + section + "]");
 	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
-	var OptionsArray = [];
+	var OptionsVariantsArray = [];
 	// var HasOptionsVariants = 0;
 
 	var html = "";
@@ -50,14 +50,14 @@ function SetupRandomiser_Randomise(section) {
 		if (
 			$(data).find("Available").length == 0
 		) {
-			OptionsArray.push([i,null]);
+			OptionsVariantsArray.push([i,null]);
 		} else {
 			$(this).children("Available").children("Expansion").each(function(){
 				if (
 					$.inArray($(this).attr("name"),Expansions_Checked_Code) != -1
 					&& $(this).attr("value") == "true"
 				) {
-					OptionsArray.push([i,null]);
+					OptionsVariantsArray.push([i,null]);
 					return
 				}
 			});
@@ -67,10 +67,10 @@ function SetupRandomiser_Randomise(section) {
 	});
 
 	//Shuffle and Truncate Options Array
-	OptionsArray = ShuffleArray(OptionsArray);
-	OptionsArray.length = RandomiseNumber;
+	OptionsVariantsArray = ShuffleArray(OptionsVariantsArray);
+	OptionsVariantsArray.length = RandomiseNumber;
 
-	DisplayRandomResults(section,RandomiseGameData,OptionsArray);
+	DisplayRandomResults(section,RandomiseGameData,OptionsVariantsArray);
 }
 
 
@@ -144,12 +144,15 @@ function RerollOption() {
 	var row = $(this).closest("tbody").children().index($(this).closest("tr"));
 	var i = 0;
 
+	var OptionsVariantsArray = [];
 	var OptionsArray = [];
 	$(this).closest("tbody").children("tr").each(function(){
-		OptionsArray.push([
+		OptionsVariantsArray.push([
 			Number($(this).attr("optionArray"))
 			,Number($(this).find("td").eq(2).attr("variantArray"))
 		]);
+
+		OptionsArray.push(Number($(this).attr("optionArray")));
 	});
 
 	var AvailableOptionsArray = [];
@@ -180,15 +183,15 @@ function RerollOption() {
 
 	//Remove Existing Items
 	for(var i = AvailableOptionsArray.length - 1 ; i >= 0 ; i -= 1) {
-		if($.inArray(AvailableOptionsArray[i],OptionsArray[0]) != -1) {
+		if($.inArray(AvailableOptionsArray[i],OptionsArray) != -1) {
 			AvailableOptionsArray.splice(i,1);
 		}
 	}
 
 	AvailableOptionsArray = ShuffleArray(AvailableOptionsArray);
-	OptionsArray[row] = [AvailableOptionsArray[0],null];
+	OptionsVariantsArray[row] = [AvailableOptionsArray[0],null];
 
-	DisplayRandomResults(section,RandomiseGameData,OptionsArray);
+	DisplayRandomResults(section,RandomiseGameData,OptionsVariantsArray);
 }
 
 
