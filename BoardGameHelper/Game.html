@@ -51,9 +51,12 @@
 
 <script>
 var gamedata;
+var display;
 var displaygamedata;
 var Expansions_Checked_Code;
 var Expansions_Checked_Name;
+var NoPlayers;
+var Difficulty;
 
 var url = new URL(window.location.href);
 var BGGID = url.searchParams.get("bggid");
@@ -71,10 +74,11 @@ function myStringInterpolation(tpl,args) {
 
 
 function Display() {
-	var display = $("input[name='DisplayRadio']:checked").attr("value");
 	var html = "";
-	var NoPlayers = Number($("select[name='NoPlayers'] option:selected").attr("name"));
-	var Difficulty = $("select[name='Difficulty'] option:selected").attr("name");
+
+	display = $("input[name='DisplayRadio']:checked").attr("value");
+	NoPlayers = Number($("select[name='NoPlayers'] option:selected").attr("name"));
+	Difficulty = $("select[name='Difficulty'] option:selected").attr("name");
 
 	Expansions_Checked_Code = $(".Checkbox_Expansion:checked").map(function(){
 		return $(this).attr("name");
