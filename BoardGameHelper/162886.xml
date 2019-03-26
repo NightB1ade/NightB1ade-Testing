@@ -10,7 +10,13 @@
 		<Expansion name="BranchAndClaw" default="true">
 			<Name>Branch and Claw</Name>
 		</Expansion>
+		<Expansion name="Promos" default="true">
+			<Name>Promos</Name>
+		</Expansion>
 	</Expansions>
+	<Players>
+		<Base min="1" max="4" default="3"></Base>
+	</Players>
 	<DisplayButtons>
 		<Setup>
 			<Name>Setup</Name>
@@ -94,5 +100,45 @@
 				<Item><Text>&lt;strong&gt;Time Runs Out&lt;/strong&gt;: If you need to draw an Invader Card (to Explore), but the Invader Deck is empty</Text></Item>
 			</Section>
 		</EndGame>
+		<SetupRandomiser>
+			<Script type="SetupRandomiser"></Script>
+			<Name>Setup Randomiser</Name>
+			<Section name="Spirits">
+				<Heading>Spirits</Heading>
+				<Randomise number="NoPlayers"></Randomise>
+				<Item><Text>Bringer of Dreams and Nightmares</Text></Item>
+				<Item>
+					<Text>Heart of the Wildfire</Text>
+					<Available>
+						<Expansion name="Promos" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item>
+					<Text>Keeper of the Forbidden Wilds</Text>
+					<Available>
+						<Expansion name="BranchAndClaw" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item><Text>Lightning’s Swift Strike</Text></Item>
+				<Item><Text>Ocean’s Hungry Grasp</Text></Item>
+				<Item><Text>River Surges in Sunlight</Text></Item>
+				<Item>
+					<Text>Serpent Slumbers Beneath the Island</Text>
+					<Available>
+						<Expansion name="Promos" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item><Text>Shadows Flicker Like Flame</Text></Item>
+				<Item>
+					<Text>Sharp Fangs Behind the Leaves</Text>
+					<Available>
+						<Expansion name="BranchAndClaw" value="true"></Expansion>
+					</Available>
+				</Item>
+				<Item><Text>A Spread of Rampant Green</Text></Item>
+				<Item><Text>Thunderspeaker</Text></Item>
+				<Item><Text>Vital Strength of Earth</Text></Item>
+			</Section>
+		</SetupRandomiser>
 	</DisplayButtons>
 </Game>
