@@ -3,7 +3,7 @@ function SetupRandomiser_Start() {
 
 	var display = $("input[name='DisplayRadio']:checked").attr("value");
 	var displaygamedata = $(gamedata).find("DisplayButtons " + display);
-	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
+	var NoPlayers = Number($("select[name='NoPlayers'] option:selected").attr("name"));
 	var html = "";
 
 	// Heading
@@ -30,7 +30,7 @@ function SetupRandomiser_Start() {
 
 function SetupRandomiser_Randomise(section) {
 	var RandomiseGameData = $(displaygamedata).find("Section[name=" + section + "]");
-	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
+	var NoPlayers = Number($("select[name='NoPlayers'] option:selected").attr("name"));
 	var OptionsVariantsArray = [];
 	// var HasOptionsVariants = 0;
 

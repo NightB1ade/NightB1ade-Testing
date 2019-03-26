@@ -73,7 +73,7 @@ function myStringInterpolation(tpl,args) {
 function Display() {
 	var display = $("input[name='DisplayRadio']:checked").attr("value");
 	var html = "";
-	var NoPlayers = $("input[name='NoPlayers']").spinner("value");
+	var NoPlayers = Number($("select[name='NoPlayers'] option:selected").attr("name"));
 	var Difficulty = $("select[name='Difficulty'] option:selected").attr("name");
 
 	Expansions_Checked_Code = $(".Checkbox_Expansion:checked").map(function(){
@@ -224,19 +224,23 @@ $(document).ready(function(){
 
 			// Unhide player number chooser if appropriate
 			if ($(gamedata).find("Players Base").length != 0) {
-				var MinPlayers = $(gamedata).find("Players Base").attr("min");
-				var MaxPlayers = $(gamedata).find("Players Base").attr("max");
-				var DefaultPlayers = $(gamedata).find("Players Base").attr("default");
+				var MinPlayers = Number($(gamedata).find("Players Base").attr("min"));
+				var MaxPlayers = Number($(gamedata).find("Players Base").attr("max"));
+				var DefaultPlayers = Number($(gamedata).find("Players Base").attr("default"));
 				var TextPlayers = $(gamedata).find("Strings Players_Capitalise").text();
 
 				var html_NoPlayers = "<td>No. " + TextPlayers + "</td>"
-					+ "<td><input class='spinner' name='NoPlayers'></td>";
+					+ "<td><select name='NoPlayers'>";
+
+				for (var i = MinPlayers ; i <= MaxPlayers ; i += 1) {
+					html_NoPlayers += "<option name='" + i + "'"
+						+ ((i == DefaultPlayers) ? " selected='selected'" : "")
+						+ ">" + i + "</option>";
+				}
+
+				html_NoPlayers += "</select></td>";
 				$("#Parameters tr[name='NoPlayers']").html(html_NoPlayers);
-				$("input[name='NoPlayers']").spinner({
-					min: MinPlayers
-					,max: MaxPlayers
-				});
-				$("input[name='NoPlayers']").spinner("value",DefaultPlayers);
+				$("select[name=NoPlayers]").selectmenu({width:100});
 			}
 
 			//Unhide difficulty chooser if appropriate
@@ -257,7 +261,7 @@ $(document).ready(function(){
 				html_Difficulty += "</select></td>";
 
 				$("#Parameters tr[name='Difficulty']").html(html_Difficulty);
-				$("select").selectmenu({width:150});
+				$("select[name=Difficulty]").selectmenu({width:150});
 			}
 
 			//Add Expansion Checkboxes
@@ -300,9 +304,8 @@ $(document).ready(function(){
 			$(".spinner").spinner();
 
 			// Bind onChange
-			$("input[name='NoPlayers']").on("spinstop",Display);
 			$("input[name='DisplayRadio'], input.Checkbox_Expansion").on("change",Display);
-			$("select[name='Difficulty']").on("selectmenuchange",Display);
+			$("select[name='Difficulty'], select[name='NoPlayers']").on("selectmenuchange",Display);
 		}
 	);
 });
